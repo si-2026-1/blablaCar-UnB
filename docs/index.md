@@ -47,13 +47,13 @@ Sistema web responsivo, com autenticação de usuários, gestão de caronas e hi
 Abaixo estão representados os modelos estruturais do banco de dados do sistema:
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/si-2026-1/blablaCar-UnB/main/assets/modelo-conceitual.png" alt="Modelo Conceitual" width="400px"/>
+<img src="https://raw.githubusercontent.com/si-2026-1/blablaCar-UnB/main/assets/modelo-conceitual.png" alt="Modelo Conceitual"/>
 <br>
 <sub><b>Figura 1: Modelo Conceitual</b></sub>
 
 <br><br>
 
-<img src="https://raw.githubusercontent.com/si-2026-1/blablaCar-UnB/main/assets/modelo-fisico.png" alt="Modelo Físico" width="400px"/>
+<img src="https://raw.githubusercontent.com/si-2026-1/blablaCar-UnB/main/assets/modelo-fisico.png" alt="Modelo Físico"/>
 <br>
 <sub><b>Figura 2: Modelo Físico</b></sub>
 
