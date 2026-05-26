@@ -48,8 +48,8 @@ Abaixo estão representados os modelos estruturais do banco de dados do sistema:
 <table align="center">
   <tr>
     <td align="center">
-      <!-- <img src="https://raw.githubusercontent.com/si-2026-1/blablaCar-UnB/main/assets/modelo-conceitual.png" alt="Modelo Conceitual" width="400px"/><br/> -->
-      <img src="/blablaCar-UnB/assets/modelo-conceitual.png" alt="Modelo Conceitual" width="400px"/><br/>
+      <img src="https://raw.githubusercontent.com/si-2026-1/blablaCar-UnB/main/assets/modelo-conceitual.png" alt="Modelo Conceitual" width="400px"/><br/>
+      <!-- <img src="/blablaCar-UnB/assets/modelo-conceitual.png" alt="Modelo Conceitual" width="400px"/><br/> -->
       <sub><b>Figura 1: Modelo Conceitual</b></sub>
     </td>
     <td align="center">
