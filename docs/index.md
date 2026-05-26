@@ -1,4 +1,4 @@
-# BlablaCar UnB
+# UnBla Bla Car
 
 ## Problema
 
@@ -42,6 +42,18 @@ O projeto busca contribuir com a mobilidade urbana sustentável da comunidade ac
 
 Sistema web responsivo, com autenticação de usuários, gestão de caronas e histórico de viagens.
 
+### Modelagem de Dados
+
+Abaixo estão representados os modelos estruturais do banco de dados do sistema:
+
+![Modelo Conceitual](assets/modelo_conceitual.png)
+*Figura 1: Modelo Conceitual (Entidade-Relacionamento)*
+
+![Modelo Lógico](assets/modelo_fisico.png)
+*Figura 2: Modelo físico (Relacional)*
+
 #### Integrantes
 
 - Luiz Felipe Bessa
+- Lucas Tavares Drumond
+- Heitor Estevam Fernandes
