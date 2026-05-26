@@ -45,12 +45,18 @@ Sistema web responsivo, com autenticação de usuários, gestão de caronas e hi
 ### Modelagem de Dados
 
 Abaixo estão representados os modelos estruturais do banco de dados do sistema:
-
-![Modelo Conceitual](assets/modelo_conceitual.png)
-*Figura 1: Modelo Conceitual (Entidade-Relacionamento)*
-
-![Modelo Lógico](assets/modelo_fisico.png)
-*Figura 2: Modelo físico (Relacional)*
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="assets/modelo_conceitual.png" alt="Modelo Conceitual" width="400px"/><br/>
+      <sub><b>Figura 1: Modelo Conceitual</b></sub>
+    </td>
+    <td align="center">
+      <img src="assets/modelo_fisico.png" alt="Modelo físico" width="400px"/><br/>
+      <sub><b>Figura 2: Modelo Físico</b></sub>
+    </td>
+  </tr>
+</table>
 
 #### Integrantes
 
