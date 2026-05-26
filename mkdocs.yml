@@ -1,1 +1,45 @@
-site_name: My Docs
+site_name: BlablaCar UnB
+site_description: Sistema de caronas para a comunidade da Universidade de Brasília
+site_url: https://si-2026-1.github.io/blablaCar-UnB/
+
+theme:
+  name: material
+  language: pt
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Início: index.md
