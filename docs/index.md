@@ -1,47 +1,38 @@
 # BlablaCar UnB
 
-## Problema
+## Bem-vindo
 
-Como facilitar o compartilhamento de caronas entre estudantes, professores e servidores da Universidade de Brasília, reduzindo custos de transporte, congestionamento no campus e impacto ambiental.
+O BlablaCar UnB e um projeto academico para facilitar caronas solidarias entre estudantes da Universidade de Brasilia. A ideia e conectar quem tem vaga no carro com quem precisa chegar ao campus com mais conforto e menos custo.
 
-## Escopo
+## Objetivo
 
-O sistema propõe uma plataforma web para conectar motoristas e passageiros da comunidade UnB, permitindo o cadastro, busca e organização de caronas com base em rotas, horários e perfis de usuários.
+Criar uma plataforma web responsiva, mobile-first, que ajude estudantes a organizar caronas de forma simples, segura e colaborativa.
 
-### Objetivos Específicos
+## Para quem e
 
-- Permitir o cadastro de motoristas e passageiros vinculados à UnB.
-- Possibilitar a publicação e busca de caronas por rota, data e horário.
-- Oferecer um sistema de avaliação para aumentar a confiança entre usuários.
+Estudantes da UnB com autenticacao por e-mail institucional.
 
-### Público Alvo
+## Funcionalidades principais do MVP
 
-- Estudantes de graduação e pós-graduação da UnB
-- Professores
-- Servidores técnico-administrativos
+- Oferecer carona.
+- Buscar carona.
+- Pedir vaga.
+- Conversar em chat temporario.
+- Visualizar rateio sugerido.
+- Avaliar apos a viagem.
 
-### Intenções de melhoria
+## Aviso importante
 
-O projeto busca contribuir com a mobilidade urbana sustentável da comunidade acadêmica, oferecendo uma alternativa segura e organizada ao transporte individual.
+Este projeto nao e Uber, 99 ou qualquer servico comercial de transporte. O foco e compartilhamento de custos entre estudantes, sem transporte remunerado e sem finalidade de lucro para motoristas ou para a plataforma.
 
-## Funcionalidades
+## Navegacao da documentacao
 
-### Motorista
+As proximas secoes da documentacao vao organizar o projeto em:
 
-- Cadastro de veículo e rota habitual
-- Publicação de caronas com vagas, horário e ponto de encontro
-- Gerenciamento de solicitações de passageiros
-
-### Passageiro
-
-- Busca de caronas por origem, destino e horário
-- Solicitação de vaga em caronas disponíveis
-- Avaliação do motorista após a viagem
-
-### Visão Geral
-
-Sistema web responsivo, com autenticação de usuários, gestão de caronas e histórico de viagens.
-
-#### Integrantes
-
-- Luiz Felipe Bessa
+- Visao do produto.
+- Requisitos.
+- Epicos e historias.
+- Rastreabilidade.
+- Roadmap.
+- Jornada do usuario.
+- Modelo de dados.

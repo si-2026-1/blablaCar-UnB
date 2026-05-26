@@ -1,0 +1,76 @@
+name: Historia de usuario
+description: Registrar historia ou tarefa do backlog
+title: "[Historia] "
+labels:
+  - "tipo:historia"
+  - "mvp"
+body:
+  - type: dropdown
+    id: epico
+    attributes:
+      label: Epico relacionado
+      description: Selecione o epico principal
+      options:
+        - E1
+        - E2
+        - E3
+        - E4
+    validations:
+      required: true
+
+  - type: dropdown
+    id: historia
+    attributes:
+      label: Historia relacionada
+      description: Selecione a historia principal
+      options:
+        - H1
+        - H2
+        - H3
+        - H4
+        - H5
+        - H6
+        - H7
+        - H8
+        - H9
+        - nova necessidade
+    validations:
+      required: true
+
+  - type: textarea
+    id: tarefa
+    attributes:
+      label: O que precisa ser feito?
+      placeholder: Descreva a necessidade de forma objetiva.
+    validations:
+      required: true
+
+  - type: textarea
+    id: pronto
+    attributes:
+      label: Como saberemos que terminou?
+      placeholder: Liste criterios objetivos de conclusao.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impacto-seguranca
+    attributes:
+      label: Ha impacto em privacidade ou seguranca?
+      options:
+        - Nao
+        - Sim, em privacidade
+        - Sim, em seguranca
+        - Sim, em ambos
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade
+      options:
+        - MVP
+        - Futuro
+    validations:
+      required: true
