@@ -1,256 +1,65 @@
-# Template de Documentação com MkDocs
+# BlablaCar UnB
 
-Este repositório contém um template simples utilizando MkDocs + GitHub Pages 
+Plataforma de caronas solidarias entre estudantes da Universidade de Brasilia (UnB), com foco em organizacao, seguranca basica e uso simples no dia a dia.
 
----
+## Problema
 
-# O que é necessário
+Muitos estudantes enfrentam transporte publico cansativo, enquanto varios carros circulam com assentos vazios. Ao mesmo tempo, ha pouca interacao social no deslocamento universitario.
 
-Antes de começar, instale:
+## Escopo do MVP
 
-- Python3
-- pip
-- git
+O MVP e uma aplicacao web responsiva, com prioridade para uso no celular, voltada apenas para estudantes autenticados por e-mail institucional.
 
-Depois instale o MkDocs:
+Funcionalidades centrais:
+
+- Oferecer carona.
+- Buscar carona.
+- Pedir vaga.
+- Conversar em chat temporario.
+- Visualizar rateio sugerido.
+- Avaliar apos a viagem.
+
+Importante: o BlablaCar UnB nao e Uber, 99 ou servico comercial. O objetivo e compartilhamento de custos, sem lucro para motoristas ou para a plataforma.
+
+## Tecnologias e documentacao
+
+- Documentacao em Markdown.
+- [MkDocs](https://www.mkdocs.org/) com tema Material.
+- Publicacao automatica no GitHub Pages.
+
+## Documentacao publicada
+
+- https://si-2026-1.github.io/blablaCar-UnB/
+
+## Estrutura resumida da documentacao
+
+```text
+docs/
+  index.md
+mkdocs.yml
+.github/workflows/deploy.yml
+```
+
+## Como executar a documentacao localmente
+
+1. Instale as dependencias:
 
 ```bash
 pip install mkdocs mkdocs-material
 ```
 
----
-
-# Estrutura do projeto
-
-```text
-docs/
-├── index.md
-├── doc1.md
-├── doc2.md
-└── ...
-
-mkdocs.yml
-```
-
-- Todos os arquivos `.md` devem ficar dentro da pasta `docs/`
-- O arquivo `mkdocs.yml` controla o site
-
----
-
-# Executando localmente
-
-Para testar localmente:
+2. Rode localmente:
 
 ```bash
 mkdocs serve
 ```
 
-Depois abra:
+3. Acesse no navegador:
 
 ```text
 http://127.0.0.1:8000
 ```
 
----
+## Status atual
 
-# Opção 1 — Usando este template em um novo repositório
-
-## Crie um novo repositório
-
-No GitHub:
-
-```text
-Use this template
-```
-
-ou faça uma cópia manual do projeto.
-
----
-
-## 2. Clone o repositório
-
-```bash
-git clone URL_DO_REPOSITORIO
-cd NOME_DO_REPOSITORIO
-```
-
----
-
-## 3. Edite o nome do site
-
-Abra `mkdocs.yml`:
-
-```yaml
-site_name: site_1
-```
-
----
-
-## 4. Faça commit e push
-
-```bash
-git add .
-git commit -m "init"
-git push
-```
-
----
-
-## 5. Ative o GitHub Pages
-
-No GitHub:
-
-```text
-Settings -> Pages
-```
-
-Em:
-
-```text
-Build and deployment
-```
-
-Selecione:
-
-```text
-Source: GitHub Actions
-```
-
----
-
-## 6. Acesse o site
-
-O GitHub irá gerar um link parecido com:
-
-```text
-https://usuario.github.io/repositorio/
-```
-
----
-
-# Opção 2 — Adicionando MkDocs em um repositório já existente
-
-Caso você já tenha um projeto e queira adicionar documentação:
-
----
-
-## 1. Instale o MkDocs
-
-```bash
-pip install mkdocs mkdocs-material
-```
-
----
-
-## 2. Crie a estrutura
-
-Dentro do repositório:
-
-```bash
-mkdir docs
-touch docs/index.md
-touch mkdocs.yml
-```
-
----
-
-## 3. Configure o `mkdocs.yml`
-
-Exemplo:
-
-```yaml
-site_name: documentation
-
-theme:
-  name: material
-```
-
----
-
-## 4. Adicione um workflow do GitHub Actions
-
-Crie:
-
-```text
-.github/workflows/deploy.yml
-```
-
-Conteúdo:
-
-```yaml
-name: Deploy MkDocs
-
-on:
-  push:
-    branches:
-      - main
-
-permissions:
-  contents: write
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - run: pip install mkdocs mkdocs-material
-
-      - run: mkdocs gh-deploy --force
-```
-
----
-
-## 5. Faça commit e push
-
-```bash
-git add .
-git commit -m "add mkdocs"
-git push
-```
-
----
-
-## 6. Ative o GitHub Pages
-
-No GitHub:
-
-```text
-Settings -> Pages
-```
-
-Selecione:
-
-```text
-Source: Deploy from branch
-Branch: gh-pages
-Folder: /root
-```
-
----
-
-
-# Comandos úteis
-
-Executar localmente:
-
-```bash
-mkdocs serve
-```
-
-Gerar site estático:
-
-```bash
-mkdocs build
-```
-
-Publicar manualmente:
-
-```bash
-mkdocs gh-deploy
-```
+Projeto em fase de documentacao e planejamento inicial do MVP.

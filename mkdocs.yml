@@ -43,3 +43,14 @@ markdown_extensions:
 
 nav:
   - Início: index.md
+  - Projeto:
+    - Visão e Escopo: projeto/visao-e-escopo.md
+    - Requisitos: projeto/requisitos.md
+    - Decisões e Riscos: projeto/decisoes-e-riscos.md
+  - Backlog:
+    - Épicos e Histórias: backlog/epicos-e-historias.md
+    - Rastreabilidade: backlog/rastreabilidade.md
+    - Roadmap: backlog/roadmap.md
+  - Design Inicial:
+    - Jornada do Usuário: design/jornada-do-usuario.md
+    - Modelo de Dados: design/modelo-de-dados.md
