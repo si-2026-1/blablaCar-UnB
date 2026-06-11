@@ -2,11 +2,15 @@
 
 ## Problema
 
-Muitos estudantes da UnB enfrentam deslocamentos cansativos no transporte público, enquanto vários carros circulam com assentos vazios. Isso aumenta custos, tempo de viagem e reduz oportunidades de interação entre colegas.
+Muitos estudantes da UnB enfrentam deslocamentos cansativos no transporte
+público, enquanto vários carros circulam com assentos vazios. Isso aumenta
+custos, tempo de viagem e reduz oportunidades de interação entre colegas.
 
 ## Proposta de solução
 
-O BlablaCar UnB propõe uma plataforma de caronas solidárias entre estudantes. A ideia é conectar quem oferece e quem busca carona com segurança básica, comunicação simples e organização da viagem.
+O BlablaCar UnB propõe uma plataforma de caronas solidárias entre estudantes. A
+ideia é conectar quem oferece e quem busca carona com segurança básica,
+comunicação simples e organização da viagem.
 
 ## Quem vai utilizar o sistema
 
@@ -43,4 +47,5 @@ Público inicial: estudantes da UnB com e-mail institucional validado.
 - Expansão para outros públicos além dos estudantes da UnB.
 - Recursos de moderação mais avançados.
 
-Observação: esta documentação representa um planejamento acadêmico do MVP, e não a implementação de um aplicativo comercial.
+Observação: esta documentação representa um planejamento acadêmico do MVP, e não
+a implementação de um aplicativo comercial.

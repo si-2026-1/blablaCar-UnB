@@ -12,7 +12,8 @@ Obrigado por contribuir com o BlablaCar UnB.
 4. Abra um Pull Request com descrição clara.
 5. Peça revisão a outro estudante antes do merge.
 6. Mantenha linguagem simples, humana e objetiva na documentação.
-7. Antes de concluir alterações na documentação, execute `mkdocs build` para validar a geração do site.
+7. Antes de concluir alterações na documentação, execute `mkdocs build` para
+   validar a geração do site.
 
 ## Boas práticas
 

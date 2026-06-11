@@ -1,6 +1,8 @@
 # Modelo de dados
 
-Modelagem inicial e consistente com o MVP acadêmico do BlablaCar UnB. O objetivo é descrever as entidades e regras de negócio, sem implementar banco de dados ou código.
+Modelagem inicial e consistente com o MVP acadêmico do BlablaCar UnB. O objetivo
+é descrever as entidades e regras de negócio, sem implementar banco de dados ou
+código.
 
 ## Escopo do modelo no MVP
 
@@ -18,13 +20,14 @@ Este modelo cobre:
 
 ### Usuario
 
-Finalidade: representar o estudante autenticado que pode atuar como motorista ou passageiro.
+Finalidade: representar o estudante autenticado que pode atuar como motorista ou
+passageiro.
 
 Campos principais:
 
 - id
 - nome
-- email_institucional (unico)
+- email_institucional (único)
 - email_verificado_em
 - foto_perfil (opcional)
 - telefone (opcional)
@@ -47,8 +50,8 @@ Relacionamentos:
 
 Cardinalidade importante:
 
-- um usuario pode ter zero ou mais veiculos;
-- um veiculo pertence obrigatoriamente a exatamente um usuario.
+- um usuário pode ter zero ou mais veículos;
+- um veículo pertence obrigatoriamente a exatamente um usuário.
 
 ### Veiculo
 
@@ -57,7 +60,7 @@ Finalidade: armazenar dados básicos do veículo utilizado pelo motorista.
 Campos principais:
 
 - id
-- usuario_id (FK obrigatoria para Usuario)
+- usuario_id (FK obrigatória para Usuario)
 - modelo
 - cor
 - placa
@@ -66,7 +69,7 @@ Campos principais:
 
 Relacionamentos:
 
-- Veiculo N:1 Usuario (obrigatorio)
+- Veiculo N:1 Usuario (obrigatório)
 - Veiculo 1:N Carona
 
 ### Carona
@@ -76,8 +79,8 @@ Finalidade: representar uma carona ofertada por um motorista com vagas.
 Campos principais:
 
 - id
-- motorista_id (FK obrigatoria para Usuario)
-- veiculo_id (FK obrigatoria para Veiculo)
+- motorista_id (FK obrigatória para Usuario)
+- veiculo_id (FK obrigatória para Veiculo)
 - origem
 - destino
 - data_hora_partida
@@ -100,15 +103,17 @@ Relacionamentos:
 
 Finalidade: representar o pedido de vaga de um passageiro em uma carona.
 
-Observação: esta entidade substitui abordagens de tabela de associação genérica de passageiros por um modelo com status e histórico de decisão.
+Observação: esta entidade substitui abordagens de tabela de associação genérica
+de passageiros por um modelo com status e histórico de decisão.
 
-Padronização do modelo: o pedido de vaga do passageiro é representado pela entidade SolicitacaoCarona em toda a documentação do projeto.
+Padronização do modelo: o pedido de vaga do passageiro é representado pela
+entidade SolicitacaoCarona em toda a documentação do projeto.
 
 Campos principais:
 
 - id
-- carona_id (FK obrigatoria para Carona)
-- passageiro_id (FK obrigatoria para Usuario)
+- carona_id (FK obrigatória para Carona)
+- passageiro_id (FK obrigatória para Usuario)
 - status (pendente, aceita, recusada, cancelada)
 - data_solicitacao
 - data_resposta (opcional)
@@ -125,8 +130,8 @@ Finalidade: registrar mensagens do chat temporário da carona.
 Campos principais:
 
 - id
-- carona_id (FK obrigatoria para Carona)
-- remetente_id (FK obrigatoria para Usuario)
+- carona_id (FK obrigatória para Carona)
+- remetente_id (FK obrigatória para Usuario)
 - conteudo
 - data_envio
 
@@ -142,9 +147,9 @@ Finalidade: registrar feedback entre participantes após a conclusão da carona.
 Campos principais:
 
 - id
-- carona_id (FK obrigatoria para Carona)
-- avaliador_id (FK obrigatoria para Usuario)
-- avaliado_id (FK obrigatoria para Usuario)
+- carona_id (FK obrigatória para Carona)
+- avaliador_id (FK obrigatória para Usuario)
+- avaliado_id (FK obrigatória para Usuario)
 - nota
 - comentario (opcional)
 - data_avaliacao
@@ -157,13 +162,14 @@ Relacionamentos:
 
 ### Denuncia
 
-Finalidade: registrar problemas de conduta ou segurança após interação real entre usuários.
+Finalidade: registrar problemas de conduta ou segurança após interação real
+entre usuários.
 
 Campos principais:
 
 - id
-- denunciante_id (FK obrigatoria para Usuario)
-- denunciado_id (FK obrigatoria para Usuario)
+- denunciante_id (FK obrigatória para Usuario)
+- denunciado_id (FK obrigatória para Usuario)
 - carona_id (FK opcional para Carona)
 - motivo
 - descricao (opcional)
@@ -183,8 +189,8 @@ Finalidade: impedir novas interações diretas entre dois usuários após incide
 Campos principais:
 
 - id
-- bloqueador_id (FK obrigatoria para Usuario)
-- bloqueado_id (FK obrigatoria para Usuario)
+- bloqueador_id (FK obrigatória para Usuario)
+- bloqueado_id (FK obrigatória para Usuario)
 - motivo (opcional)
 - data_bloqueio
 - ativo
@@ -196,43 +202,48 @@ Relacionamentos:
 
 ## Regras de relacionamento e integridade
 
-1. Veiculo dependente de Usuario:
-um veiculo não existe sem usuario dono (FK obrigatoria).
+1. Veiculo dependente de Usuario: um veículo não existe sem usuário dono (FK
+	obrigatória).
 
-2. Consistencia motorista x veiculo:
-uma carona só pode usar veiculo pertencente ao motorista da propria carona.
+2. Consistência motorista x veículo: uma carona só pode usar veículo pertencente
+	ao motorista da própria carona.
 
-Essa regra garante que o Veiculo utilizado na carona pertença obrigatoriamente ao Usuario que atua como motorista.
+Essa regra garante que o Veiculo utilizado na carona pertença obrigatoriamente
+ao Usuario que atua como motorista.
 
-3. Unicidade de solicitacao por passageiro:
-um passageiro não pode solicitar a mesma carona mais de uma vez.
-Restrição recomendada: UNIQUE (carona_id, passageiro_id).
+3. Unicidade de solicitação por passageiro: um passageiro não pode solicitar a
+   mesma carona mais de uma vez. Restrição recomendada: UNIQUE (carona_id,
+   passageiro_id).
 
-4. Controle de vagas:
-solicitacao aceita reduz vagas_disponiveis em 1; cancelamento de solicitacao aceita devolve a vaga.
+4. Controle de vagas: solicitação aceita reduz vagas_disponiveis em 1;
+	cancelamento de solicitação aceita devolve a vaga.
 
-5. Chat temporario:
-mensagens so podem ser enviadas por motorista ou passageiros com solicitacao aceita para a carona.
+5. Chat temporário: mensagens só podem ser enviadas por motorista ou passageiros
+	com solicitação aceita para a carona.
 
-6. Avaliacao pos-conclusao:
-avaliacao só pode ser criada quando a carona estiver com status concluida.
+6. Avaliacao pós-conclusão: avaliação só pode ser criada quando a carona estiver
+   com status concluida.
 
-7. Denuncia e bloqueio apos interacao:
-denuncia e bloqueio devem ocorrer apenas entre usuarios que já interagiram em uma mesma carona.
+7. Denuncia e bloqueio após interação: denúncia e bloqueio devem ocorrer apenas
+	entre usuários que já interagiram em uma mesma carona.
 
-8. Privacidade:
-telefone é opcional; endereço residencial completo não deve ser armazenado/exposto; placa pode ser exibida parcialmente quando necessário.
+8. Privacidade: telefone é opcional; endereço residencial completo não deve ser
+   armazenado/exposto; placa pode ser exibida parcialmente quando necessário.
 
 ## Modelo lógico resumido
 
 - Usuario (id PK)
 - Veiculo (id PK, usuario_id FK -> Usuario.id)
 - Carona (id PK, motorista_id FK -> Usuario.id, veiculo_id FK -> Veiculo.id)
-- SolicitacaoCarona (id PK, carona_id FK -> Carona.id, passageiro_id FK -> Usuario.id, UNIQUE(carona_id, passageiro_id))
+- SolicitacaoCarona (id PK, carona_id FK -> Carona.id, passageiro_id FK ->
+  Usuario.id, UNIQUE(carona_id, passageiro_id))
 - Mensagem (id PK, carona_id FK -> Carona.id, remetente_id FK -> Usuario.id)
-- Avaliacao (id PK, carona_id FK -> Carona.id, avaliador_id FK -> Usuario.id, avaliado_id FK -> Usuario.id)
-- Denuncia (id PK, denunciante_id FK -> Usuario.id, denunciado_id FK -> Usuario.id, carona_id FK opcional -> Carona.id)
-- Bloqueio (id PK, bloqueador_id FK -> Usuario.id, bloqueado_id FK -> Usuario.id, UNIQUE(bloqueador_id, bloqueado_id))
+- Avaliacao (id PK, carona_id FK -> Carona.id, avaliador_id FK -> Usuario.id,
+  avaliado_id FK -> Usuario.id)
+- Denuncia (id PK, denunciante_id FK -> Usuario.id, denunciado_id FK ->
+  Usuario.id, carona_id FK opcional -> Carona.id)
+- Bloqueio (id PK, bloqueador_id FK -> Usuario.id, bloqueado_id FK ->
+  Usuario.id, UNIQUE(bloqueador_id, bloqueado_id))
 
 ## Diagrama ER (visão simplificada)
 
@@ -255,4 +266,5 @@ erDiagram
 	USUARIO ||--o{ BLOQUEIO : e_bloqueado
 ```
 
-Observação: este é um documento conceitual para planejamento acadêmico; não representa implementação de código.
+Observação: este é um documento conceitual para planejamento acadêmico; não
+representa implementação de código.

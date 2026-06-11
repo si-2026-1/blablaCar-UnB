@@ -1,5 +1,6 @@
 site_name: UnBla Bla Car
-site_description: Sistema de caronas para a comunidade da Universidade de Brasília
+site_description:
+  Sistema de caronas para a comunidade da Universidade de Brasília
 site_url: https://si-2026-1.github.io/blablaCar-UnB/
 
 theme:
@@ -44,13 +45,14 @@ markdown_extensions:
 nav:
   - Início: index.md
   - Projeto:
-    - Visão e Escopo: projeto/visao-e-escopo.md
-    - Requisitos: projeto/requisitos.md
-    - Decisões e Riscos: projeto/decisoes-e-riscos.md
+      - Visão e Escopo: projeto/visao-e-escopo.md
+      - Requisitos: projeto/requisitos.md
+      - Decisões e Riscos: projeto/decisoes-e-riscos.md
+      - Glossário: projeto/glossario.md
   - Backlog:
-    - Épicos e Histórias: backlog/epicos-e-historias.md
-    - Rastreabilidade: backlog/rastreabilidade.md
-    - Roadmap: backlog/roadmap.md
+      - Épicos e Histórias: backlog/epicos-e-historias.md
+      - Rastreabilidade: backlog/rastreabilidade.md
+      - Roadmap: backlog/roadmap.md
   - Design Inicial:
-    - Jornada do Usuário: design/jornada-do-usuario.md
-    - Modelo de Dados: design/modelo-de-dados.md
+      - Jornada do Usuário: design/jornada-do-usuario.md
+      - Modelo de Dados: design/modelo-de-dados.md

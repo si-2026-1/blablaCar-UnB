@@ -1,6 +1,7 @@
 # Roadmap
 
-Este roadmap organiza o desenvolvimento do MVP em três entregas simples e progressivas.
+Este roadmap organiza o desenvolvimento do MVP em três entregas simples e
+progressivas.
 
 ## Entrega 1 - Base do produto
 
@@ -14,7 +15,8 @@ Este roadmap organiza o desenvolvimento do MVP em três entregas simples e progr
 ## Entrega 2 - Fluxo principal de carona
 
 - Histórias: H3, H4, H5, H6.
-- Requisitos envolvidos: RF04, RF05, RF06, RF07, RF08, RF09, RNF01, RNF02, RNF04, RNF05, RNF07.
+- Requisitos envolvidos: RF04, RF05, RF06, RF07, RF08, RF09, RNF01, RNF02,
+  RNF04, RNF05, RNF07.
 - Foco:
   - publicação de carona;
   - busca de caronas e custo_sugerido;
