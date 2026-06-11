@@ -9,117 +9,161 @@ Este documento reúne tudo em uma única página, simples de manter.
 
 Objetivo: permitir que estudantes utilizem a plataforma com confiança.
 
-### H1 — Como estudante, quero entrar usando meu e-mail institucional, para participar de uma comunidade universitária mais segura.
+### H1 — Login institucional
 
-Contexto: o acesso institucional ajuda a reduzir perfis falsos e mantém o foco na comunidade da UnB.
+- Ator principal: Estudante.
+- Épico relacionado: E1.
+- Requisitos relacionados: RF01, RNF03.
+- Prioridade: MVP.
+- Pré-condições: estudante com e-mail institucional ativo.
+- Descrição narrativa: Como estudante, quero entrar usando meu e-mail institucional, para participar de uma comunidade universitária mais segura.
+- Entidades de dados afetadas: Usuario.
 
-Critérios de aceitação:
-- O login exige e-mail institucional válido.
-- Usuários sem e-mail institucional não conseguem concluir o acesso.
-- O estudante autenticado consegue entrar novamente sem recriar conta.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que o estudante informa um e-mail institucional válido, quando concluir a autenticação, então o acesso é permitido.
+- Dado que o e-mail não é institucional ou não é válido, quando tentar se autenticar, então o acesso é negado.
+- Dado que o estudante já possui conta validada, quando entrar novamente, então o sistema reaproveita o cadastro existente.
 
-### H2 — Como estudante, quero montar meu perfil e, se eu dirigir, cadastrar meu carro, para que outras pessoas saibam com quem irão viajar.
+### H2 — Perfil e cadastro de veículo
 
-Contexto: informações básicas de perfil e veículo trazem mais clareza antes da carona.
+- Ator principal: Estudante (motorista ou passageiro).
+- Épico relacionado: E1.
+- Requisitos relacionados: RF02, RF03, RNF01, RNF07.
+- Prioridade: MVP.
+- Pré-condições: usuário autenticado.
+- Descrição narrativa: Como estudante, quero montar meu perfil e, se eu dirigir, cadastrar meu carro, para que outras pessoas saibam com quem vão viajar.
+- Entidades de dados afetadas: Usuario, Veiculo.
 
-Critérios de aceitação:
-- O estudante consegue preencher e salvar perfil básico.
-- O motorista consegue cadastrar dados básicos do carro.
-- Passageiros visualizam as informações essenciais antes de pedir vaga.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que o usuário está autenticado, quando preencher os dados de perfil, então o perfil é salvo.
+- Dado que o usuário atua como motorista, quando cadastrar um veículo, então o veículo fica vinculado ao próprio usuário.
+- Dado que outro estudante visualiza o perfil em contexto de carona, quando abrir os detalhes, então vê informações básicas e não sensíveis.
 
 ## E2 — Oferecer ou encontrar uma carona
 
 Objetivo: conectar estudantes que já fazem trajetos parecidos.
 
-### H3 — Como motorista, quero oferecer uma carona informando caminho, horário e vagas, para compartilhar uma viagem que eu já faria.
+### H3 — Publicação de carona
 
-Contexto: publicar uma carona de forma simples facilita o aproveitamento de assentos vazios.
+- Ator principal: Motorista.
+- Épico relacionado: E2.
+- Requisitos relacionados: RF04, RNF02, RNF05.
+- Prioridade: MVP.
+- Pré-condições: usuário autenticado com perfil e veículo cadastrado.
+- Descrição narrativa: Como motorista, quero oferecer uma carona informando caminho, horário e vagas, para compartilhar uma viagem que eu já faria.
+- Entidades de dados afetadas: Carona, Veiculo, Usuario.
 
-Critérios de aceitação:
-- O motorista informa origem, destino, horário e número de vagas.
-- A carona publicada aparece na busca de outros estudantes.
-- O motorista consegue editar ou cancelar uma carona aberta.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que o motorista possui veículo válido, quando publicar uma carona com origem, destino, horário e vagas, então a carona é criada com status aberta.
+- Dado que a carona está aberta, quando outro usuário realizar uma busca compatível, então a carona aparece nos resultados.
+- Dado que a carona ainda não iniciou, quando o motorista editar ou cancelar a oferta, então o status é atualizado.
 
-### H4 — Como passageiro, quero procurar caronas compatíveis e visualizar um custo aproximado, para escolher uma opção conveniente sem constrangimento sobre dinheiro.
+### H4 — Busca de caronas e custo sugerido
 
-Contexto: busca com custo sugerido ajuda na decisão sem transformar a plataforma em serviço comercial.
+- Ator principal: Passageiro.
+- Épico relacionado: E2.
+- Requisitos relacionados: RF05, RF09, RNF02, RNF07.
+- Prioridade: MVP.
+- Pré-condições: usuário autenticado.
+- Descrição narrativa: Como passageiro, quero procurar caronas compatíveis e visualizar um custo_sugerido, para escolher uma opção conveniente sem transformar a plataforma em serviço comercial.
+- Entidades de dados afetadas: Carona, Usuario.
 
-Critérios de aceitação:
-- O passageiro consegue buscar por trajeto e horário.
-- A lista mostra caronas compatíveis com informações principais.
-- O sistema exibe um custo aproximado de compartilhamento.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que o passageiro informa trajeto e horário, quando executar a busca, então o sistema retorna caronas compatíveis.
+- Dado que há caronas compatíveis, quando o passageiro visualizar a lista, então vê informações principais da carona e do motorista.
+- Dado que uma carona possui valor de referência, quando abrir os detalhes, então o sistema exibe custo_sugerido/rateio_sugerido sem fluxo de pagamento.
 
 ## E3 — Combinar e realizar a viagem
 
 Objetivo: tornar a organização da carona simples e respeitosa.
 
-### H5 — Como passageiro, quero pedir uma vaga e receber uma resposta do motorista, para saber se posso contar com aquela carona.
+### H5 — Solicitação de vaga
 
-Contexto: confirmação clara evita dúvida e melhora o planejamento de quem vai viajar.
+- Ator principal: Passageiro (solicita) e motorista (responde).
+- Épico relacionado: E3.
+- Requisitos relacionados: RF06, RF07, RNF04.
+- Prioridade: MVP.
+- Pré-condições: carona com status aberta e vagas disponíveis.
+- Descrição narrativa: Como passageiro, quero pedir uma vaga e receber uma resposta do motorista, para saber se posso contar com aquela carona.
+- Entidades de dados afetadas: SolicitacaoCarona, Carona, Usuario.
 
-Critérios de aceitação:
-- O passageiro consegue solicitar vaga em uma carona aberta.
-- O motorista pode aceitar ou recusar a solicitação.
-- O passageiro recebe o status atualizado do pedido.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que a carona está aberta, quando o passageiro solicitar vaga, então uma SolicitacaoCarona é criada com status pendente.
+- Dado que existe uma solicitação pendente, quando o motorista aceita ou recusa, então o status da solicitação é atualizado.
+- Dado que o passageiro já solicitou a mesma carona, quando tentar solicitar novamente, então o sistema impede a duplicidade.
 
-### H6 — Como participante de uma carona aceita, quero conversar em um chat temporário, para combinar o embarque sem compartilhar meu telefone.
+### H6 — Chat temporário
 
-Contexto: o chat temporário permite alinhamento rápido com mais privacidade.
+- Ator principal: Participante aceito da carona.
+- Épico relacionado: E3.
+- Requisitos relacionados: RF08, RNF01, RNF07.
+- Prioridade: MVP.
+- Pré-condições: solicitação aceita ou usuário motorista da carona.
+- Descrição narrativa: Como participante de uma carona aceita, quero conversar em um chat temporário, para combinar o embarque sem compartilhar meu telefone.
+- Entidades de dados afetadas: Mensagem, Carona, SolicitacaoCarona, Usuario.
 
-Critérios de aceitação:
-- O chat é liberado somente após aceite da vaga.
-- Mensagens ficam visíveis apenas para participantes da mesma carona.
-- O chat deixa de ficar ativo após a conclusão ou cancelamento da viagem.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que o usuário é participante aceito, quando abrir a carona, então o chat temporário fica disponível.
+- Dado que o usuário não foi aceito, quando tentar enviar mensagem, então o sistema bloqueia o envio.
+- Dado que a carona foi concluída ou cancelada, quando acessar o chat, então novas mensagens não são permitidas.
 
-### H7 — Como participante, quero cancelar ou concluir uma carona, para manter as informações da viagem atualizadas.
+### H7 — Cancelamento e conclusão da carona
 
-Contexto: registrar o estado da viagem evita ruído para motorista e passageiros.
+- Ator principal: Motorista e passageiro participante.
+- Épico relacionado: E3.
+- Requisitos relacionados: RF10, RNF04.
+- Prioridade: MVP.
+- Pré-condições: carona existente com participantes.
+- Descrição narrativa: Como participante, quero cancelar ou concluir uma carona, para manter as informações da viagem atualizadas.
+- Entidades de dados afetadas: Carona, SolicitacaoCarona.
 
-Critérios de aceitação:
-- O participante autorizado consegue cancelar antes da viagem.
-- O motorista consegue concluir a viagem ao final do trajeto.
-- O status da carona é atualizado para todos os envolvidos.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que a carona ainda não iniciou, quando houver cancelamento autorizado, então o status da carona passa para cancelada.
+- Dado que o trajeto terminou, quando o motorista concluir a carona, então o status passa para concluída.
+- Dado que o status mudou, quando os participantes consultarem a carona, então visualizam o novo estado.
 
 ## E4 — Construir confiança na comunidade
 
-Objetivo: ajudar estudantes a escolherem companhias de viagem com mais segurança.
+Objetivo: ajudar estudantes a escolher companhias de viagem com mais segurança.
 
-### H8 — Como participante, quero avaliar a experiência depois da viagem, para ajudar a comunidade a tomar decisões melhores.
+### H8 — Avaliação pós-viagem
 
-Contexto: avaliações simples ajudam a construir histórico de confiança entre estudantes.
+- Ator principal: Participante da carona concluída.
+- Épico relacionado: E4.
+- Requisitos relacionados: RF11, RNF04.
+- Prioridade: MVP.
+- Pré-condições: carona com status concluída e participação confirmada.
+- Descrição narrativa: Como participante, quero avaliar a experiência depois da viagem, para ajudar a comunidade a tomar decisões melhores.
+- Entidades de dados afetadas: Avaliacao, Carona, Usuario.
 
-Critérios de aceitação:
-- A avaliação só pode ser feita após viagem concluída.
-- O participante registra uma avaliação objetiva da experiência.
-- A avaliação fica associada ao perfil do usuário avaliado.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que a carona foi concluída, quando o participante registrar nota e comentário opcional, então a Avaliacao é salva.
+- Dado que a carona não foi concluída, quando o usuário tentar avaliar, então o sistema bloqueia a ação.
+- Dado que a Avaliacao foi salva, quando o perfil do avaliado for consultado, então a avaliação aparece no histórico.
 
-### H9 — Como estudante, quero denunciar ou bloquear alguém em caso de problema, para me sentir protegido ao utilizar a plataforma.
+### H9 — Denúncia e bloqueio
 
-Contexto: mecanismos básicos de proteção aumentam segurança e reduzem recorrência de problemas.
+- Ator principal: Estudante participante de interação prévia.
+- Épico relacionado: E4.
+- Requisitos relacionados: RF12, RNF01, RNF03, RNF04.
+- Prioridade: MVP.
+- Pré-condições: usuários com interação prévia em carona.
+- Descrição narrativa: Como estudante, quero denunciar ou bloquear alguém em caso de problema, para me sentir protegido ao utilizar a plataforma.
+- Entidades de dados afetadas: Denuncia, Bloqueio, Usuario, Carona.
 
-Critérios de aceitação:
-- O estudante consegue registrar denúncia com motivo.
-- O estudante consegue bloquear outro usuário.
-- O bloqueio impede novas interações diretas entre os dois perfis.
-- Denúncias ficam registradas para análise de moderação.
+Critérios de aceitação (Dado / Quando / Então):
 
-Prioridade: MVP.
+- Dado que houve interação prévia, quando o estudante registrar uma denúncia com motivo, então o caso fica aberto para análise.
+- Dado que o estudante bloquear outro usuário, quando houver tentativa de nova interação direta, então o sistema impede o contato.
+- Dado que não houve interação prévia, quando houver tentativa de denúncia ou bloqueio, então o sistema exige um contexto válido de carona.
 
 ## Ideias para depois do MVP
 

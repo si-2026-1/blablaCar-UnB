@@ -1,38 +1,38 @@
 # BlablaCar UnB
 
-## Bem-vindo
+## Visão geral
 
-O BlablaCar UnB e um projeto academico para facilitar caronas solidarias entre estudantes da Universidade de Brasilia. A ideia e conectar quem tem vaga no carro com quem precisa chegar ao campus com mais conforto e menos custo.
+O BlablaCar UnB é um projeto acadêmico voltado ao planejamento de uma plataforma de caronas solidárias entre estudantes da Universidade de Brasília. A proposta é conectar quem tem vagas disponíveis no carro com quem precisa se deslocar com mais praticidade, conforto e economia.
 
 ## Objetivo
 
-Criar uma plataforma web responsiva, mobile-first, que ajude estudantes a organizar caronas de forma simples, segura e colaborativa.
+Definir e documentar um MVP de aplicação web responsiva, mobile-first, que ajude estudantes a organizar caronas de forma simples, segura e colaborativa.
 
-## Para quem e
+## Público-alvo
 
-Estudantes da UnB com autenticacao por e-mail institucional.
+Estudantes da UnB com autenticação por e-mail institucional.
 
 ## Funcionalidades principais do MVP
 
 - Oferecer carona.
 - Buscar carona.
 - Pedir vaga.
-- Conversar em chat temporario.
+- Conversar em chat temporário.
 - Visualizar rateio sugerido.
-- Avaliar apos a viagem.
+- Avaliar após a viagem.
 
-## Aviso importante
+## Aviso de escopo
 
-Este projeto nao e Uber, 99 ou qualquer servico comercial de transporte. O foco e compartilhamento de custos entre estudantes, sem transporte remunerado e sem finalidade de lucro para motoristas ou para a plataforma.
+Este projeto é acadêmico e representa o planejamento de desenvolvimento de um MVP. O BlablaCar UnB não é Uber, 99 nem qualquer serviço comercial de transporte. A plataforma não processa pagamentos e não tem finalidade lucrativa.
 
-## Navegacao da documentacao
+## Principais seções da documentação
 
-As proximas secoes da documentacao vao organizar o projeto em:
+Esta documentação está organizada nas seguintes seções:
 
-- Visao do produto.
-- Requisitos.
-- Epicos e historias.
-- Rastreabilidade.
-- Roadmap.
-- Jornada do usuario.
-- Modelo de dados.
+- Projeto: visão e escopo, requisitos e decisões do MVP.
+- Backlog: épicos, histórias, rastreabilidade e roadmap.
+- Design inicial: jornada do usuário e modelo de dados.
+
+## Integrantes
+
+Os integrantes podem ser informados conforme a necessidade da disciplina ou da entrega acadêmica.

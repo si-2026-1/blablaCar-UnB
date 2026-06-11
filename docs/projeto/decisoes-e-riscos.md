@@ -1,22 +1,22 @@
-# Decisoes e Riscos
+# Decisões e Riscos
 
-## Decisoes do projeto
+## Decisões do projeto
 
-| Tema | Decisao |
+| Tema | Decisão |
 | --- | --- |
-| Contato pessoal | Nao revelar telefone pessoal. |
-| Endereco | Nao mostrar endereco residencial exato. |
-| Modelo de carona | Nao permitir lucro com caronas. |
+| Contato pessoal | Não revelar telefone pessoal. |
+| Endereço | Não mostrar endereço residencial exato. |
+| Modelo de carona | Não permitir lucro com caronas. |
 
 ## Riscos principais
 
-| Risco | Impacto esperado | Mitigacao inicial |
+| Risco | Impacto esperado | Mitigação inicial |
 | --- | --- | --- |
-| Cancelamentos de ultima hora | Frustracao, perda de tempo, baixa confianca | Regras de cancelamento, historico simples e avaliacao apos corrida |
-| Comportamento inadequado | Queda de seguranca e confianca entre usuarios | Canal de denuncia, bloqueio basico e revisao de casos |
-| Avaliacoes injustas | Reputacao distorcida de usuarios | Regras claras de avaliacao e analise de denuncias |
-| Exposicao de localizacao | Risco de privacidade e seguranca | Mostrar somente dados necessarios e evitar pontos sensiveis |
+| Cancelamentos de última hora | Frustração, perda de tempo e baixa confiança | Regras de cancelamento, histórico simples e avaliação após a carona |
+| Comportamento inadequado | Queda de segurança e confiança entre usuários | Canal de denúncia, bloqueio básico e revisão de casos |
+| Avaliações injustas | Reputação distorcida de usuários | Regras claras de avaliação e análise de denúncias |
+| Exposição de localização | Risco de privacidade e segurança | Mostrar apenas os dados necessários e evitar pontos sensíveis |
 
-## Ponto de atencao futuro
+## Ponto de atenção futuro
 
-A medida que a base de usuarios crescer, sera necessaria moderacao mais estruturada, com processos e responsabilidades bem definidos.
+À medida que a base de usuários crescer, será necessária uma moderação mais estruturada, com processos e responsabilidades bem definidos.

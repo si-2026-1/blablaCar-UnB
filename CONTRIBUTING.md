@@ -9,12 +9,12 @@ Obrigado por contribuir com o BlablaCar UnB.
    - docs/nome-da-tarefa
    - feat/nome-da-funcionalidade
 3. Evite commits diretamente na main.
-4. Abra um Pull Request com descricao clara.
-5. Peca revisao a outro estudante antes do merge.
-6. Mantenha linguagem simples e humana na documentacao.
+4. Abra um Pull Request com descrição clara.
+5. Peça revisão a outro estudante antes do merge.
+6. Mantenha linguagem simples, humana e objetiva na documentação.
+7. Antes de concluir alterações na documentação, execute `mkdocs build` para validar a geração do site.
 
-## Boas praticas
+## Boas práticas
 
-- Mantenha mudancas pequenas e objetivas.
-- Evite inserir dados sensiveis em exemplos.
-- Execute `mkdocs build` antes de concluir sua entrega.
+- Mantenha mudanças pequenas e objetivas.
+- Evite inserir dados sensíveis em exemplos.
