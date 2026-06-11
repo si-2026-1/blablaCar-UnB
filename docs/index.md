@@ -1,4 +1,4 @@
-# BlablaCar UnB
+# UnBla Bla Car
 
 ## Visão geral
 
@@ -35,4 +35,8 @@ Esta documentação está organizada nas seguintes seções:
 
 ## Integrantes
 
-Os integrantes podem ser informados conforme a necessidade da disciplina ou da entrega acadêmica.
+- Luiz Felipe Bessa
+- Lucas Tavares Drumond
+- Heitor Estevam Fernandes
+- Antonio Paulo
+- Gabriel Costa

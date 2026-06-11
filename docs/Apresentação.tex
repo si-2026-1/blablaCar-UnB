@@ -1,0 +1,185 @@
+\documentclass[aspectratio=169]{beamer}
+\mode<presentation> {
+\usetheme{Madrid}
+}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+\usepackage{color,url}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{calc}
+\usepackage{subfig}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepackage{pgf-pie}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\lstset{language=Python,basicstyle=\ttfamily,keywordstyle=\color{blue}}
+\usepackage{caption}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\title{UnBlabla Car}
+\subtitle{Mobilidade e Networking na UnB}
+
+\author[Equipe]{Antonio Paulo Abreu Marques - 19008449 \newline Lucas Tavares Drumond - 231011650 \newline Heitor Fernandes Estevam - 231011453 \newline Luiz Felipe Bessa Santos - 231011687 \newline Gabriel Costa Santana - 190087391}
+
+\institute[UnB]{Sistemas de Informação - CIC0101 \\ 
+    \medskip
+    {\includegraphics[scale=.25]{logo-unb}} 
+    \medskip
+    \date{\today}
+}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Visão Estratégica}
+\tableofcontents
+\end{frame}
+
+%------------------------------------------------
+\section{Produto}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Problema}
+Milhares de estudantes da UnB realizam trajetos diários semelhantes, muitas vezes com assentos vazios em seus veículos ou enfrentando dificuldades no transporte público como superlotação e atrasos.
+\begin{itemize}
+    \item \textbf{Desafio:} Como conectar motoristas e passageiros da comunidade acadêmica de forma segura e eficiente?
+    \item \textbf{Solução (UnBlabla Car):} Uma plataforma peer-to-peer focada exclusivamente na comunidade da UnB.
+    \item \textbf{Principais Aspectos:} 
+    \begin{itemize}
+        \item Otimização de tempo e recursos financeiros.
+        \item Fortalecimento do networking acadêmico.
+        \item Promoção de maior união entre os estudantes de forma orgânica
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Escopo do Sistema}
+\begin{columns}[c]
+\column{.45\textwidth}
+\textbf{O que o sistema É:}
+\begin{itemize}
+    \item Um ambiente fechado e inclusivo projetado para alunos da universidade.
+    \item Um mecanismo de divisão de custos (gasolina) para incentivar a congregação acadêmica.
+    \item Uma plataforma com foco mobile, priorizando a praticidade da mobilidade urbana.
+\end{itemize}
+
+\column{.5\textwidth}
+\textbf{O que o sistema NÃO É:}
+\begin{itemize}
+    \item Não é um serviço de transporte comercial como Uber ou 99POP.
+    \item Não visa a obtenção de lucro pelos motoristas ou pela plataforma.
+    \item Não é aberto ao público geral, o uso é estrito aos alunos.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\section{Arquitetura e Modelagem de Dados}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Lógica de Banco de Dados}
+\begin{block}{Estrutura Simples, Resolução Complexa}
+A arquitetura foi desenhada para garantir performance e integridade:
+\begin{itemize}
+    \item \textbf{Disponibilidade e Desempenho:} Buscas rápidas e acessíveis durante picos (manhã e tarde).
+    \item \textbf{Privacidade por Design:} O sistema protege o histórico de rotas e dados sensíveis dos usuários.
+\end{itemize}
+\end{block}
+\vspace{0.5cm}
+\end{frame}
+
+% Utilização da tag [plain] para maximizar a área da imagem
+\begin{frame}[plain]
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=\textwidth, height=0.95\textheight, keepaspectratio]{modelo-conceitual.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=\textwidth, height=0.95\textheight, keepaspectratio]{modelo-fisico.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\section{Épicos e Histórias de Usuário}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Segurança e Pareamento}
+\begin{block}{E1 — Acesso e Identidade}
+    \begin{itemize}
+        \item \textbf{Autenticação (H1):} Cadastro e acesso estritamente via e-mail institucional ativo.
+        \item \textbf{Perfil (H2):} Cadastro de dados do estudante e do veículo.
+    \end{itemize}
+\end{block}
+
+\begin{block}{E2 — Pareamento entre Usuários}
+    \begin{itemize}
+        \item \textbf{Rotas (H3/H4):} O motorista publica seu destino e os passageiros buscam rotas de saída próximas. O algoritmo deve sugerir um ponto de encontro sem grande desvio do caminho.
+        \item \textbf{Cálculo Sem Atrito (H4):} O sistema sugere o valor de contribuição baseado na rota, eliminando o constrangimento.
+    \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operação e Reputação}
+\begin{block}{E3 — Logística da Viagem}
+    \begin{itemize}
+        \item \textbf{Confirmação (H5/H7):} Ciclo de vida da solicitação (pedido, aceite, conclusão/cancelamento).
+        \item \textbf{Comunicação Segura (H6):} Chat provisório apenas para o embarque, protegendo o número de telefone pessoal dos usuários.
+    \end{itemize}
+\end{block}
+
+\begin{block}{E4 — Confiança e Futuro}
+    \begin{itemize}
+        \item \textbf{Feedback (H8/H9):} Avaliação via estrelas (1 a 5) e comentários, além de sistema de denúncia e bloqueio.
+        \item \textbf{Gamificação (Visão Futura):} Conquista de troféus ou selos e cálculo de economia de CO2 para incentivar o uso.
+    \end{itemize}
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\Large{\centerline{Obrigado!}}
+\Large{\centerline{Dúvidas?}}
+
+\vspace{1cm}
+
+\centering{
+    \color{blue}Sistemas de Informação - UnB
+}
+\end{frame}
+%------------------------------------------------
+\end{document}
