@@ -1,31 +1,39 @@
 # Roadmap
 
-Este roadmap organiza o desenvolvimento do MVP em tres entregas simples e progressivas.
+Este roadmap organiza o desenvolvimento do MVP em três entregas simples e
+progressivas.
 
 ## Entrega 1 - Base do produto
 
-- Autenticacao institucional.
-- Perfil.
-- Cadastro de veiculo.
+- Histórias: H1, H2.
+- Requisitos envolvidos: RF01, RF02, RF03, RNF01, RNF03, RNF07.
+- Foco:
+  - autenticação institucional;
+  - perfil de estudante;
+  - cadastro básico de veículo.
 
 ## Entrega 2 - Fluxo principal de carona
 
-- Publicacao de carona.
-- Busca de carona.
-- Solicitacao de vaga.
-- Aceite de vaga.
-- Custo estimado.
-- Chat temporario.
+- Histórias: H3, H4, H5, H6.
+- Requisitos envolvidos: RF04, RF05, RF06, RF07, RF08, RF09, RNF01, RNF02,
+  RNF04, RNF05, RNF07.
+- Foco:
+  - publicação de carona;
+  - busca de caronas e custo_sugerido;
+  - solicitação e resposta de vaga;
+  - chat temporário entre participantes aceitos.
 
-## Entrega 3 - Confianca e acabamento
+## Entrega 3 - Confiança e acabamento
 
-- Conclusao da viagem.
-- Avaliacao.
-- Denuncia e bloqueio basico.
-- Ajustes de privacidade.
-- Revisao de documentacao.
+- Histórias: H7, H8, H9.
+- Requisitos envolvidos: RF10, RF11, RF12, RNF01, RNF03, RNF04, RNF06.
+- Foco:
+  - cancelamento e conclusão de carona;
+  - avaliação pós-viagem;
+  - denúncia e bloqueio básico;
+  - ajustes de privacidade e revisão final da documentação.
 
 ## Ideias futuras
 
-- Gamificacao para incentivar boas praticas na comunidade.
+- Gamificação para incentivar boas práticas na comunidade.
 - Sustentabilidade com indicadores simples, como estimativa de CO2 evitado.
