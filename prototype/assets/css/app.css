@@ -280,6 +280,21 @@ button { font-family: inherit; }
 .card--tap:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--green-200); }
 .card--tap:active { transform: translateY(0) scale(.995); }
 
+/* --- Rateio (decomposição) ---------------------------------------------- */
+.fare { padding: var(--s-4); }
+.fare__top { display: flex; align-items: center; gap: 14px; }
+.fare__rows {
+  margin-top: var(--s-3); padding-top: var(--s-3);
+  border-top: 1px dashed var(--line);
+  display: grid; gap: 8px;
+}
+.fare__row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  font-size: 14px;
+}
+.fare__row .muted { font-size: 12px; }
+.fare__foot { margin-top: var(--s-3); font-size: 12px; line-height: 1.4; }
+
 /* --- Card de carona ------------------------------------------------------ */
 .ride { padding: var(--s-4); display: grid; gap: var(--s-3); }
 .ride + .ride { margin-top: var(--s-3); }

@@ -202,6 +202,7 @@ Screens.home = () => ({
 Screens.carona = ({ id }) => {
   const c = caronaPorId(id);
   const m = motoristaDe(c);
+  const f = fareOf(c);
   const pedido = MEUS_PEDIDOS[id];
   return {
     appbar: "Detalhes da carona",
@@ -240,13 +241,26 @@ Screens.carona = ({ id }) => {
           <span style="color:var(--ink-4)">${icon("chevron")}</span>
         </button>
 
-        <div class="card" style="padding:16px;margin-top:14px;display:flex;align-items:center;gap:14px">
-          <span class="list-row__ic">${icon("money")}</span>
-          <div style="flex:1">
-            <div style="font-weight:700">Rateio sugerido</div>
-            <div class="muted" style="font-size:13px">Combustível dividido — sem pagamento no app</div>
+        <div class="card fare" style="margin-top:14px">
+          <div class="fare__top">
+            <span class="list-row__ic">${icon("money")}</span>
+            <div style="flex:1">
+              <div style="font-weight:700">Rateio sugerido</div>
+              <div class="muted" style="font-size:13px">Combustível dividido — sem pagamento no app</div>
+            </div>
+            <b class="tnum" style="font-family:var(--font-display);font-size:20px">${money(f.total)}</b>
           </div>
-          <b class="tnum" style="font-family:var(--font-display);font-size:20px">${money(c.rateio)}</b>
+          <div class="fare__rows">
+            <div class="fare__row">
+              <span>Trecho em comum <span class="muted tnum">${Math.round(f.kmComum)} km ÷ ${f.pessoas} pessoas</span></span>
+              <span class="tnum">${money(f.comumPorPessoa)}</span>
+            </div>
+            <div class="fare__row">
+              <span>Seu desvio <span class="muted tnum">${c.de.nome} · +${f.desvioKm.toLocaleString("pt-BR")} km</span></span>
+              <span class="tnum">${money(f.desvio)}</span>
+            </div>
+          </div>
+          <div class="fare__foot muted">Consumo do ${m.veiculo.modelo} (${consumoDe(c).toLocaleString("pt-BR")} km/L) × ${money(PRECO_COMBUSTIVEL)}/L · estimado com o carro cheio</div>
         </div>
 
         <div class="card" style="padding:16px;margin-top:14px;display:flex;align-items:center;gap:14px">
