@@ -350,7 +350,10 @@ Screens.motorista = ({ id }) => {
 };
 
 /* Publicar carona --------------------------------------------------------- */
-Screens.publicar = () => ({
+Screens.publicar = () => {
+  const sugestao = fareOf({ de: LUGARES.asaNorte, para: UNB, vagasTotal: 3, desvioKm: 1.2 }).total;
+  const sugestaoStr = sugestao.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return {
   tab: "publicar",
   appbar: "Oferecer carona",
   html: `
@@ -382,9 +385,10 @@ Screens.publicar = () => ({
       </div>
       <div class="field">
         <label>Rateio sugerido</label>
-        <div class="field__ctrl">${icon("money")}<input value="6,00" inputmode="decimal"/><span class="field__suffix">por pessoa</span></div>
+        <div class="field__ctrl">${icon("money")}<input value="${sugestaoStr}" inputmode="decimal"/><span class="field__suffix">por pessoa</span></div>
       </div>
     </div>
+    <p class="muted" style="font-size:12px;margin-top:-8px">Calculado automaticamente a partir do trajeto e do consumo do seu carro. Você pode ajustar.</p>
 
     <div class="field">
       <label>Observações <span class="muted">(opcional)</span></label>
@@ -409,7 +413,8 @@ Screens.publicar = () => ({
       })
     );
   },
-});
+  };
+};
 
 /* Minhas caronas (lado motorista) ---------------------------------------- */
 Screens.minhas = () => ({
