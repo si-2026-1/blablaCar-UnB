@@ -256,7 +256,7 @@ Screens.carona = ({ id }) => {
               <span class="tnum">${money(f.comumPorPessoa)}</span>
             </div>
             <div class="fare__row">
-              <span>Seu desvio <span class="muted tnum">${c.de.nome} · +${f.desvioKm.toLocaleString("pt-BR")} km</span></span>
+              <span>Seu desvio <span class="muted tnum">${c.de.nome} · +${f.desvioKm.toLocaleString("pt-BR", { minimumFractionDigits: 1 })} km</span></span>
               <span class="tnum">${money(f.desvio)}</span>
             </div>
           </div>
