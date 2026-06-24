@@ -35,7 +35,7 @@ const MapKit = (() => {
     const map = base(el);
     const group = [];
     caronas.forEach((c) => {
-      const m = L.marker([c.de.lat, c.de.lng], { icon: pin("R$" + c.rateio) }).addTo(map);
+      const m = L.marker([c.de.lat, c.de.lng], { icon: pin("R$" + Math.round(fareOf(c).total)) }).addTo(map);
       m.on("click", () => onPick && onPick(c.id));
       group.push([c.de.lat, c.de.lng]);
     });

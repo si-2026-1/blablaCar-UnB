@@ -63,7 +63,7 @@ function seats(free, total) {
   return `<span class="seats" title="${free} de ${total} vagas">${s}</span>`;
 }
 function money(v) {
-  return "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
+  return "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 function whatsLink(num, msg) {
   return `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
@@ -80,7 +80,7 @@ function rideCard(c) {
         <div class="ride__driver-name">${m.nome.split(" ")[0]} ${ratingInline(m.rating)}</div>
         <div class="ride__driver-sub">${m.veiculo.modelo} · ${m.veiculo.cor}</div>
       </div>
-      <div class="ride__price"><b class="tnum">${money(c.rateio)}</b><span>rateio sugerido</span></div>
+      <div class="ride__price"><b class="tnum">${money(fareOf(c).total)}</b><span>rateio sugerido</span></div>
     </div>
     <div class="route">
       <div class="route__rail">
@@ -503,7 +503,7 @@ Screens.viagens = () => {
                 <div class="route__stop"><span class="t">${c.chegada}</span><span class="p">${c.para.nome}</span></div>
               </div>
             </div>
-            <div class="ride__meta" style="margin-top:12px"><span class="chip">${icon("calendar")}${c.data}</span><span class="chip chip--green">${icon("money")}${money(c.rateio)}</span></div>
+            <div class="ride__meta" style="margin-top:12px"><span class="chip">${icon("calendar")}${c.data}</span><span class="chip chip--green">${icon("money")}${money(fareOf(c).total)}</span></div>
             <a class="btn btn--whats btn--sm" style="width:100%;margin-top:14px" href="${whatsLink(m.whatsapp, "Oi! Pedi vaga na sua carona " + c.de.nome + " → " + c.para.nome + " (" + c.saida + ") no UnBlaBlaCar.")}" target="_blank" rel="noopener">${icon("whatsapp", { fill: true })} Falar com ${m.nome.split(" ")[0]}</a>
           </div>`;
         }).join("")}
