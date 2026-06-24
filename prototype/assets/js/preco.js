@@ -29,6 +29,24 @@ function fareBreakdown({ kmComum, consumo, pessoas, desvioKm, preco = PRECO_COMB
   return { total, comum, comumPorPessoa, desvio, desvioKm, kmComum, pessoas, custoPorKm };
 }
 
+// Consumo (km/L) do carro do motorista da carona.
+// MINHAS_CARONAS são minhas (sou o motorista) e não têm motoristaId → uso EU.
+function consumoDe(carona) {
+  const m = carona.motoristaId ? MOTORISTAS[carona.motoristaId] : EU;
+  return m.veiculo.consumo;
+}
+
+// Adaptador: resolve os números da carona e chama fareBreakdown
+function fareOf(carona) {
+  const kmComum = haversineKm(carona.de, carona.para) * FATOR_ROTA;
+  return fareBreakdown({
+    kmComum,
+    consumo: consumoDe(carona),
+    pessoas: carona.vagasTotal + 1,
+    desvioKm: carona.desvioKm,
+  });
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { haversineKm, fareBreakdown, PRECO_COMBUSTIVEL, FATOR_ROTA };
+  module.exports = { haversineKm, fareBreakdown, fareOf, consumoDe, PRECO_COMBUSTIVEL, FATOR_ROTA };
 }
