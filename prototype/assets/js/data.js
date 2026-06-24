@@ -85,32 +85,32 @@ const CARONAS = [
   {
     id: "c1", motoristaId: "m1", de: LUGARES.asaNorte, para: UNB,
     data: "Hoje, qui 26/06", saida: "07:10", chegada: "07:30",
-    vagas: 3, vagasTotal: 4, rateio: 6, desvioKm: 1.2, bagagem: true,
+    vagas: 3, vagasTotal: 4, desvioKm: 1.2, bagagem: true,
   },
   {
     id: "c2", motoristaId: "m2", de: LUGARES.aguasClaras, para: UNB,
     data: "Hoje, qui 26/06", saida: "06:40", chegada: "07:15",
-    vagas: 2, vagasTotal: 3, rateio: 10, desvioKm: 2.5, bagagem: false,
+    vagas: 2, vagasTotal: 3, desvioKm: 2.5, bagagem: false,
   },
   {
     id: "c3", motoristaId: "m3", de: LUGARES.gama, para: UNB,
     data: "Hoje, qui 26/06", saida: "06:25", chegada: "07:20",
-    vagas: 3, vagasTotal: 4, rateio: 12, desvioKm: 0.8, bagagem: true,
+    vagas: 3, vagasTotal: 4, desvioKm: 0.8, bagagem: true,
   },
   {
     id: "c4", motoristaId: "m4", de: LUGARES.ceilandia, para: UNB,
     data: "Hoje, qui 26/06", saida: "06:30", chegada: "07:25",
-    vagas: 1, vagasTotal: 3, rateio: 11, desvioKm: 3.0, bagagem: false,
+    vagas: 1, vagasTotal: 3, desvioKm: 3.0, bagagem: false,
   },
   {
     id: "c5", motoristaId: "m5", de: LUGARES.sobradinho, para: UNB,
     data: "Hoje, qui 26/06", saida: "07:20", chegada: "07:50",
-    vagas: 2, vagasTotal: 3, rateio: 9, desvioKm: 1.5, bagagem: true,
+    vagas: 2, vagasTotal: 3, desvioKm: 1.5, bagagem: true,
   },
   {
     id: "c6", motoristaId: "m1", de: UNB, para: LUGARES.asaNorte,
     data: "Hoje, qui 26/06", saida: "18:30", chegada: "18:50",
-    vagas: 3, vagasTotal: 4, rateio: 6, desvioKm: 1.2, bagagem: true,
+    vagas: 3, vagasTotal: 4, desvioKm: 1.2, bagagem: true,
   },
 ];
 
@@ -119,7 +119,7 @@ const MINHAS_CARONAS = [
   {
     id: "p1", de: UNB, para: LUGARES.taguatinga,
     data: "Hoje, qui 26/06", saida: "18:40", chegada: "19:10",
-    vagas: 3, vagasTotal: 3, rateio: 8, desvioKm: 2.0,
+    vagas: 3, vagasTotal: 3, desvioKm: 2.0,
     solicitantes: [
       { id: "s1", nome: "João Vítor", curso: "Engenharia Mecânica", cor: "#0e5aa7", rating: 4.8, whatsapp: "5561988880001", status: "pendente" },
       { id: "s2", nome: "Beatriz Lima", curso: "Psicologia", cor: "#b0337a", rating: 4.9, whatsapp: "5561988880002", status: "pendente" },
@@ -129,7 +129,7 @@ const MINHAS_CARONAS = [
   {
     id: "p2", de: LUGARES.guara, para: UNB,
     data: "Amanhã, sex 27/06", saida: "07:00", chegada: "07:20",
-    vagas: 2, vagasTotal: 2, rateio: 7, desvioKm: 1.0,
+    vagas: 2, vagasTotal: 2, desvioKm: 1.0,
     solicitantes: [
       { id: "s4", nome: "Mariana Dias", curso: "Letras", cor: "#c2410c", rating: 5.0, whatsapp: "5561988880004", status: "pendente" },
     ],
