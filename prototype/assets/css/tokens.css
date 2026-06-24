@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Design tokens — UnBlaBlaCar
+   Paleta institucional UnB: verde (ação) + azul (marca) + neutros quentes.
+   Mantida em um só lugar para consistência e troca de tema fácil.
+   ========================================================================== */
+
+:root {
+  /* --- Verde UnB (cor de ação / marca primária) --- */
+  --green-50:  #eaf6ee;
+  --green-100: #cfe9d7;
+  --green-200: #a6d6b6;
+  --green-300: #6cc28a;
+  --green-400: #34a868;
+  --green-500: #1f9d57;
+  --green-600: #178049;  /* primária */
+  --green-700: #11633a;
+  --green-800: #0c4b2c;
+  --green-900: #0a3a23;
+
+  /* --- Azul institucional (apoio / topo) --- */
+  --blue-50:   #eaf2fb;
+  --blue-100:  #d4e6f8;
+  --blue-400:  #2f7fc9;
+  --blue-500:  #1466b8;
+  --blue-600:  #0e5aa7;
+  --blue-700:  #0a4480;
+  --blue-800:  #093a6b;
+  --blue-900:  #072a4f;
+
+  /* --- Acentos --- */
+  --amber-400: #f0a531;  /* estrelas / avaliações */
+  --red-500:   #d8453c;  /* recusar / alerta */
+
+  /* --- Tinta e superfícies (neutros levemente esverdeados) --- */
+  --ink:       #0c1712;
+  --ink-2:     #36473e;
+  --ink-3:     #6c7c73;
+  --ink-4:     #9aa8a0;
+  --line:      #e2eae4;
+  --line-2:    #eef3ef;
+  --surface:   #ffffff;
+  --surface-2: #f7faf8;
+  --bg:        #eef2ee;
+
+  /* Faixa/chrome do aparelho */
+  --device-bg:   #0a2a47;
+  --device-edge: #071d33;
+
+  /* --- Raios --- */
+  --r-xs:   8px;
+  --r-sm:  12px;
+  --r-md:  16px;
+  --r-lg:  22px;
+  --r-xl:  28px;
+  --r-full: 999px;
+
+  /* --- Escala de espaçamento (base 4) --- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 28px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+
+  /* --- Sombras --- */
+  --shadow-xs: 0 1px 2px rgba(12, 23, 18, .06);
+  --shadow-sm: 0 1px 2px rgba(12, 23, 18, .06), 0 2px 6px -1px rgba(12, 23, 18, .07);
+  --shadow-md: 0 8px 20px -8px rgba(12, 23, 18, .20);
+  --shadow-lg: 0 24px 50px -18px rgba(10, 58, 35, .30);
+
+  /* --- Tipografia --- */
+  --font-display: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --text-xs:   12px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   17px;
+  --text-lg:   20px;
+  --text-xl:   25px;
+  --text-2xl:  32px;
+
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+}
