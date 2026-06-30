@@ -49,14 +49,13 @@ app e o objetivo é compartilhar custos, sem finalidade lucrativa.
 
 ## Protótipo
 
-Protótipo em HTML/CSS/JS na pasta `prototype/`.
+O projeto possui um protótipo funcional em HTML, CSS e JavaScript localizado na pasta `prototype/`.
 
-### Como executar o protótipo
+Para executar localmente:
 
 ```bash
 cd prototype
 python -m http.server 5500
-```
 
 Abra em `http://localhost:5500`.
 

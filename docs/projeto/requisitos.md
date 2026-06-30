@@ -1,61 +1,59 @@
 # Requisitos
 
-Este documento define os requisitos do MVP do UnBlaBlaCar de forma objetiva,
-rastreável e coerente com o escopo acadêmico do projeto.
+Esta página apresenta os requisitos principais do MVP do BlablaCar UnB.
 
 ## Requisitos funcionais
 
-| ID   | Nome                            | Descrição                                                                   | Prioridade | Observação ou critério de validação                                                            |
-| ---- | ------------------------------- | --------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| RF01 | Autenticação institucional      | Permitir cadastro e login com e-mail institucional válido.                  | MVP        | Validado quando apenas estudantes com e-mail institucional conseguem acessar a plataforma.     |
-| RF02 | Perfil de usuário               | Permitir criação e edição de perfil básico de estudante.                    | MVP        | Validado quando o usuário consegue salvar e atualizar seus dados básicos.                      |
-| RF03 | Cadastro de veículo             | Permitir cadastro básico de veículo para usuário que atua como motorista.   | MVP        | Validado quando o veículo fica vinculado ao usuário que o cadastrou.                           |
-| RF04 | Publicação de carona            | Permitir publicação de carona com origem, destino, horário e vagas.         | MVP        | Validado quando a carona publicada aparece disponível para busca.                              |
-| RF05 | Busca de caronas                | Permitir busca de caronas por trajeto e horário.                            | MVP        | Validado quando o sistema retorna caronas compatíveis com os filtros informados.               |
-| RF06 | Solicitação de vaga             | Permitir que o passageiro solicite vaga em uma carona aberta.               | MVP        | Validado quando a solicitação é registrada com status inicial pendente.                        |
-| RF07 | Aceite ou recusa de solicitação | Permitir que o motorista aceite ou recuse solicitações recebidas.           | MVP        | Validado quando o status da solicitação é atualizado e visível ao passageiro.                  |
-| RF08 | Chat temporário                 | Disponibilizar chat temporário apenas para participantes aceitos na carona. | MVP        | Validado quando apenas motorista e participantes aceitos conseguem trocar mensagens.           |
-| RF09 | Custo ou rateio sugerido        | Exibir custo_sugerido ou rateio_sugerido sem processar pagamento.           | MVP        | Validado quando a carona mostra valor de referência sem fluxo financeiro na plataforma.        |
-| RF10 | Encerramento da carona          | Permitir cancelamento antes da partida e conclusão ao final da viagem.      | MVP        | Validado quando o status da carona pode mudar para cancelada ou concluída conforme o contexto. |
-| RF11 | Avaliação pós-viagem            | Permitir avaliação após carona concluída.                                   | MVP        | Validado quando só participantes de carona concluída conseguem registrar avaliação.            |
-| RF12 | Denúncia e bloqueio             | Permitir denúncia e bloqueio básico entre usuários que já interagiram.      | MVP        | Validado quando denúncia e bloqueio só podem ser feitos com contexto de interação prévia.      |
+| ID | Requisito | Prioridade |
+|---|---|---|
+| RF01 | Permitir login com e-mail institucional da UnB. | MVP |
+| RF02 | Permitir criação de perfil básico do estudante. | MVP |
+| RF03 | Permitir cadastro de veículo para estudantes motoristas. | MVP |
+| RF04 | Permitir que o motorista publique uma carona com origem, destino, horário e vagas. | MVP |
+| RF05 | Permitir que o passageiro visualize caronas disponíveis. | MVP |
+| RF06 | Exibir detalhes da carona, incluindo rota, motorista, veículo, vagas e rateio sugerido. | MVP |
+| RF07 | Permitir que o passageiro solicite uma vaga. | MVP |
+| RF08 | Permitir que o motorista aceite ou recuse solicitações. | MVP |
+| RF09 | Permitir acompanhamento das caronas solicitadas ou publicadas. | MVP |
+| RF10 | Permitir comunicação entre participantes aceitos na carona. | MVP |
+| RF11 | Exibir informações de reputação do usuário. | MVP |
+| RF12 | Planejar denúncia e bloqueio para situações de risco ou desconforto. | Futuro próximo |
 
 ## Requisitos não funcionais
 
-| ID    | Nome                                   | Descrição                                                                                | Prioridade | Observação ou critério de validação                                                      |
-| ----- | -------------------------------------- | ---------------------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------- |
-| RNF01 | Privacidade de dados                   | Garantir privacidade de localização e contato pessoal, evitando exposição desnecessária. | MVP        | Validado quando dados sensíveis não são exibidos além do necessário.                     |
-| RNF02 | Usabilidade em dispositivos móveis     | Garantir experiência mobile-first e uso confortável em celular.                          | MVP        | Validado quando os fluxos principais funcionam com boa legibilidade em telas pequenas.   |
-| RNF03 | Segurança de acesso                    | Garantir que o acesso ocorra apenas com autenticação institucional válida.               | MVP        | Validado quando acessos sem credencial institucional são bloqueados.                     |
-| RNF04 | Integridade dos dados                  | Garantir consistência dos dados de carona, solicitações e vínculos entre entidades.      | MVP        | Validado quando não há duplicidade de solicitação nem uso de veículo de outro motorista. |
-| RNF05 | Desempenho básico                      | Garantir desempenho adequado em publicação e busca de caronas.                           | MVP        | Validado quando as ações centrais respondem sem lentidão perceptível.                    |
-| RNF06 | Disponibilidade em horários relevantes | Garantir disponibilidade em horários de maior uso por estudantes.                        | MVP        | Validado quando o sistema permanece acessível nos períodos típicos de deslocamento.      |
-| RNF07 | Clareza e simplicidade da interface    | Garantir interface compreensível, objetiva e adequada ao contexto acadêmico.             | MVP        | Validado quando os fluxos principais podem ser entendidos sem instruções complexas.      |
-
-## Observações de escopo do MVP
-
-- O projeto é acadêmico e simula o planejamento de desenvolvimento do MVP.
-- A plataforma é de caronas solidárias e não tem finalidade lucrativa.
-- O sistema sugere custo/rateio, mas não processa pagamentos.
-- O produto não é Uber, 99 nem serviço comercial de transporte.
+| ID | Requisito | Categoria |
+|---|---|---|
+| RNF01 | A interface deve priorizar uso em dispositivos móveis. | Usabilidade |
+| RNF02 | O sistema não deve expor telefone pessoal como requisito para combinar caronas. | Privacidade |
+| RNF03 | O sistema não deve exibir endereço residencial completo publicamente. | Privacidade |
+| RNF04 | O rateio deve ser apresentado como sugestão de custo, não como pagamento comercial. | Regra de negócio |
+| RNF05 | A busca e a publicação de caronas devem ser simples e rápidas. | Desempenho |
+| RNF06 | O sistema deve manter linguagem clara para estudantes. | Usabilidade |
+| RNF07 | Dados sensíveis devem ser protegidos e exibidos apenas quando necessários. | Segurança |
 
 ## Regras de negócio
 
-- Apenas estudantes com e-mail institucional podem usar o MVP.
-- O motorista compartilha uma viagem que já faria.
-- O rateio sugerido não representa lucro.
-- Chat interno temporário é a solução planejada para comunicação.
-- Avaliações devem ocorrer apenas após interação real ou carona concluída.
-- Denúncia e bloqueio são mecanismos de segurança da comunidade.
+- O MVP é voltado para estudantes da UnB.
+- O acesso deve ocorrer por e-mail institucional.
+- O motorista compartilha uma viagem que já realizaria.
+- O sistema não é Uber, 99 ou serviço comercial de transporte.
+- O motorista não deve usar a plataforma com finalidade lucrativa.
+- O valor exibido é apenas um rateio sugerido de custos.
+- O telefone pessoal não deve ser obrigatório para combinar uma carona.
+- O endereço residencial completo não deve ser exposto.
+- A comunicação ideal do MVP é um chat interno temporário.
+- Avaliações devem ocorrer apenas após uma interação válida.
+- Denúncia e bloqueio são mecanismos planejados para segurança da comunidade.
 
 ## Restrições do MVP
 
-- Não há backend de pagamento ou cobrança.
-- O protótipo representa fluxos principais com algumas etapas simuladas.
-- O escopo é acadêmico e não cobre operação comercial.
+O MVP não inclui:
 
-## Privacidade e segurança
+- pagamento dentro da plataforma;
+- aplicativo nativo para Android ou iOS;
+- uso aberto ao público geral;
+- sistema avançado de moderação;
+- gamificação completa;
+- cálculo oficial de impacto ambiental.
 
-- Telefone pessoal não é obrigatório e não deve ser exposto como regra do produto.
-- Endereço residencial completo não deve ser exibido.
-- Dados de interação devem ficar restritos ao contexto da carona.
+Esses pontos podem ser considerados em versões futuras.

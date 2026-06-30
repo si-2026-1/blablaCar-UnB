@@ -1,21 +1,27 @@
 # Rastreabilidade
 
-Matriz enxuta entre requisitos do MVP, épicos, histórias e telas reais do protótipo.
+Esta página relaciona os requisitos do BlablaCar UnB com os épicos, histórias de usuário e telas do protótipo.
+
+## Matriz de rastreabilidade
 
 | Requisito | Épico | História | Tela do protótipo | Situação |
 |---|---|---|---|---|
-| Login institucional por e-mail da UnB | E1 — Entrar e participar com segurança | H1 — Login institucional | 01-login-institucional | Representada |
-| Perfil de estudante e veículo | E1 — Entrar e participar com segurança | H2 — Perfil e veículo | 10-perfil-usuario | Parcial |
-| Publicar carona com rota, horário e vagas | E2 — Oferecer ou encontrar uma carona | H3 — Oferecer carona | 06-oferecer-carona, 07-carona-publicada | Representada |
-| Buscar carona e ver rateio sugerido | E2 — Oferecer ou encontrar uma carona | H4 — Buscar carona e rateio | 02-home-caronas-disponiveis, 03-detalhes-carona-rota | Representada |
-| Pedir vaga e receber resposta | E3 — Combinar e realizar a viagem | H5 — Pedir vaga e receber resposta | 04-detalhes-carona-solicitacao, 08-minhas-caronas-pedidos, 09-minhas-caronas-pedido-aceito | Representada |
-| Comunicação entre participantes | E3 — Combinar e realizar a viagem | H6 — Comunicação/chat temporário | Chat da carona | Representado de forma simplificada |
-| Acompanhar, cancelar e concluir carona | E3 — Combinar e realizar a viagem | H7 — Acompanhar/cancelar/concluir carona | 05-minhas-viagens-passageiro | Parcial |
-| Avaliações e reputação | E4 — Construir confiança na comunidade | H8 — Avaliações/reputação | 10-perfil-usuario | Parcial |
-| Denúncia e bloqueio | E4 — Construir confiança na comunidade | H9 — Denúncia/bloqueio | Sem tela dedicada no protótipo atual | Planejada |
+| Acesso institucional | E1 — Entrar e participar com segurança | H1 — Login institucional | Login institucional | Representado |
+| Perfil do estudante | E1 — Entrar e participar com segurança | H2 — Perfil e veículo | Perfil do usuário | Representado parcialmente |
+| Cadastro de veículo | E1 — Entrar e participar com segurança | H2 — Perfil e veículo | Perfil do usuário | Representado parcialmente |
+| Publicação de carona | E2 — Oferecer ou encontrar uma carona | H3 — Oferecer carona | Oferecer carona / Carona publicada | Representado |
+| Busca de caronas | E2 — Oferecer ou encontrar uma carona | H4 — Buscar carona e visualizar rateio | Home com caronas disponíveis | Representado |
+| Rateio sugerido | E2 — Oferecer ou encontrar uma carona | H4 — Buscar carona e visualizar rateio | Detalhes da carona | Representado |
+| Solicitação de vaga | E3 — Combinar e realizar a viagem | H5 — Solicitar vaga e receber resposta | Detalhes da carona / Solicitação enviada | Representado |
+| Aceite ou recusa de passageiro | E3 — Combinar e realizar a viagem | H5 — Solicitar vaga e receber resposta | Minhas caronas / Pedido aceito | Representado |
+| Comunicação entre participantes | E3 — Combinar e realizar a viagem | H6 — Chat interno temporário | Chat da carona / comunicação do protótipo | Representado de forma simplificada |
+| Acompanhamento da carona | E3 — Combinar e realizar a viagem | H7 — Cancelar ou concluir carona | Minhas viagens | Representado parcialmente |
+| Avaliação e reputação | E4 — Construir confiança na comunidade | H8 — Avaliação pós-viagem | Perfil do usuário | Representado parcialmente |
+| Denúncia e bloqueio | E4 — Construir confiança na comunidade | H9 — Denúncia e bloqueio | Não representado no protótipo atual | Planejado |
+| Privacidade de dados | Transversal | H1, H2, H6 e H9 | Login, perfil e comunicação | Parcial |
 
-## Nota sobre H6
+## Observações
 
-No protótipo atual, H6 está representada com uma tela de chat da carona em
-formato simulado. A evolução do MVP é adicionar persistência e controle de
-mensagens por contexto de viagem.
+O protótipo cobre os fluxos principais do MVP: login, busca de caronas, publicação, solicitação, aceite e visualização do rateio sugerido.
+
+Algumas histórias aparecem parcialmente porque ainda exigem evolução em versões futuras, especialmente conclusão formal da carona, avaliação pós-viagem e denúncia ou bloqueio.
