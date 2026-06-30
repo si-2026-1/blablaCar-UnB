@@ -29,7 +29,6 @@ const ICONS = {
   mail: '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
   edit: '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"/>',
   money: '<rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/>',
-  whatsapp: '<path d="M17.5 14.4c-.3-.15-1.74-.86-2-.96-.27-.1-.47-.15-.66.15-.2.3-.76.95-.93 1.14-.17.2-.34.22-.64.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.91-2.18-.24-.58-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.98-1.4.25-.68.25-1.27.18-1.39-.07-.12-.27-.2-.57-.34Z"/><path d="M12 2a10 10 0 0 0-8.52 15.27L2 22l4.86-1.45A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-2.85.84.85-2.78-.2-.31A8.2 8.2 0 1 1 12 20.2Z"/>',
   spark: '<path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',
   leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/>',
 };
@@ -65,10 +64,6 @@ function seats(free, total) {
 function money(v) {
   return "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
-function whatsLink(num, msg) {
-  return `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
-}
-
 /* Card de carona (usado na home) */
 function rideCard(c) {
   const m = motoristaDe(c);
@@ -182,7 +177,7 @@ Screens.home = () => ({
 
       <div class="note note--info" style="margin-top:16px">
         ${icon("shield")}
-        <span>Só estudantes com e-mail <b>@aluno.unb.br</b> aparecem aqui. O contato é combinado pelo WhatsApp após o aceite.</span>
+        <span>Só estudantes com e-mail <b>@aluno.unb.br</b> aparecem aqui. Após o aceite, a combinação acontece no chat temporário da carona.</span>
       </div>
     </div>
   </div>`,
@@ -287,8 +282,8 @@ Screens.carona = ({ id }) => {
           });
         } else if (st === "pendente") {
           action.innerHTML = `
-            <div class="note pop"><span>${icon("clock")}</span><span><b>Solicitação enviada!</b> ${m.nome.split(" ")[0]} vai avaliar seu pedido. Combine o ponto de encontro pelo WhatsApp assim que for aceito.</span></div>
-            <a class="btn btn--whats" style="margin-top:12px" href="${whatsLink(m.whatsapp, "Oi! Pedi vaga na sua carona " + c.de.nome + " → " + c.para.nome + " (" + c.saida + ") no UnBlaBlaCar.")}" target="_blank" rel="noopener">${icon("whatsapp", { fill: true })} Falar no WhatsApp</a>
+            <div class="note pop"><span>${icon("clock")}</span><span><b>Solicitação enviada!</b> ${m.nome.split(" ")[0]} vai avaliar seu pedido. Quando for aceito, você pode usar o chat da carona para combinar o embarque.</span></div>
+            <button class="btn btn--ghost" style="margin-top:12px" data-go="chat">${icon("mail")} Abrir chat da carona</button>
             <button class="btn btn--danger" style="margin-top:10px" id="cancel">Cancelar solicitação</button>`;
           action.querySelector("#cancel").addEventListener("click", () => { delete MEUS_PEDIDOS[id]; render(); });
         }
@@ -317,7 +312,7 @@ Screens.motorista = ({ id }) => {
         </div>
       </div>
       <div class="screen__body">
-        <a class="btn btn--whats" href="${whatsLink(m.whatsapp, "Oi " + m.nome.split(" ")[0] + "! Te achei no UnBlaBlaCar.")}" target="_blank" rel="noopener">${icon("whatsapp", { fill: true })} Conversar no WhatsApp</a>
+        <button class="btn btn--ghost" data-go="chat">${icon("mail")} Abrir chat da carona</button>
 
         <div class="card" style="padding:16px;margin-top:16px;display:flex;align-items:center;gap:14px">
           <span class="list-row__ic">${icon("car")}</span>
@@ -348,6 +343,44 @@ Screens.motorista = ({ id }) => {
     </div>`,
   };
 };
+
+/* Chat da carona (simulação visual) -------------------------------------- */
+Screens.chat = () => ({
+  appbar: "Chat da carona",
+  html: `
+  <div class="screen__body">
+    <div class="note note--info" style="margin-bottom:14px">${icon("shield")}<span>Chat temporário disponível apenas para esta carona.</span></div>
+
+    <div class="card" style="padding:14px;display:grid;gap:10px">
+      <div style="display:flex;justify-content:flex-start">
+        <div style="max-width:80%;background:var(--surface-2);border:1px solid var(--line);padding:10px 12px;border-radius:12px 12px 12px 4px">
+          <div style="font-weight:700;font-size:12px;color:var(--ink-3);margin-bottom:3px">Motorista</div>
+          <div>Oi! Confirmando a saída às 07:10 na Asa Norte.</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end">
+        <div style="max-width:80%;background:var(--blue-50);border:1px solid var(--blue-100);padding:10px 12px;border-radius:12px 12px 4px 12px">
+          <div style="font-weight:700;font-size:12px;color:var(--blue-700);margin-bottom:3px">Passageiro</div>
+          <div>Perfeito! Chego no ponto às 07:05.</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-start">
+        <div style="max-width:80%;background:var(--surface-2);border:1px solid var(--line);padding:10px 12px;border-radius:12px 12px 12px 4px">
+          <div style="font-weight:700;font-size:12px;color:var(--ink-3);margin-bottom:3px">Motorista</div>
+          <div>Fechado. Qualquer atraso eu aviso por aqui.</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end">
+        <div style="max-width:80%;background:var(--blue-50);border:1px solid var(--blue-100);padding:10px 12px;border-radius:12px 12px 4px 12px">
+          <div style="font-weight:700;font-size:12px;color:var(--blue-700);margin-bottom:3px">Passageiro</div>
+          <div>Combinado, obrigado!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="muted" style="font-size:12px;margin-top:10px">Simulação visual do chat interno do MVP. Sem persistência de mensagens neste protótipo.</div>
+  </div>`,
+});
 
 /* Publicar carona --------------------------------------------------------- */
 Screens.publicar = () => {
@@ -472,7 +505,7 @@ function requestRow(cid, s) {
       <button class="btn btn--primary btn--sm" style="width:100%" data-act="aceito" data-cid="${cid}" data-sid="${s.id}">${icon("check")} Aceitar</button>
     </div>`;
   } else if (s.status === "aceito") {
-    foot = `<a class="btn btn--whats btn--sm" style="width:100%" href="${whatsLink(s.whatsapp, "Oi " + s.nome.split(" ")[0] + "! Confirmando sua vaga na carona pelo UnBlaBlaCar.")}" target="_blank" rel="noopener">${icon("whatsapp", { fill: true })} Combinar pelo WhatsApp</a>`;
+    foot = `<button class="btn btn--ghost btn--sm" style="width:100%" data-go="chat">${icon("mail")} Abrir chat da carona</button>`;
   } else {
     foot = `<div class="muted" style="font-size:13px;text-align:center">Solicitação recusada</div>`;
   }
@@ -500,7 +533,7 @@ Screens.viagens = () => {
     html: `
     <div class="screen__body screen__pad-bottom">
       ${ids.length ? `
-        <div class="note" style="margin-bottom:16px">${icon("clock")}<span>Pedidos enviados. Combine o ponto de encontro pelo <b>WhatsApp</b> assim que o motorista aceitar.</span></div>
+        <div class="note" style="margin-bottom:16px">${icon("clock")}<span>Pedidos enviados. Quando houver aceite, combine o embarque no <b>chat da carona</b>.</span></div>
         <div class="stagger">
         ${ids.map((id) => {
           const c = caronaPorId(id);
@@ -523,7 +556,7 @@ Screens.viagens = () => {
               </div>
             </div>
             <div class="ride__meta" style="margin-top:12px"><span class="chip">${icon("calendar")}${c.data}</span><span class="chip chip--green">${icon("money")}${money(fareOf(c).total)}</span></div>
-            <a class="btn btn--whats btn--sm" style="width:100%;margin-top:14px" href="${whatsLink(m.whatsapp, "Oi! Pedi vaga na sua carona " + c.de.nome + " → " + c.para.nome + " (" + c.saida + ") no UnBlaBlaCar.")}" target="_blank" rel="noopener">${icon("whatsapp", { fill: true })} Falar com ${m.nome.split(" ")[0]}</a>
+            <button class="btn btn--ghost btn--sm" style="width:100%;margin-top:14px" data-go="chat">${icon("mail")} Abrir chat da carona</button>
           </div>`;
         }).join("")}
         </div>

@@ -27,14 +27,13 @@ const EU = {
   cor: "#0e5aa7",
   rating: 4.9,
   viagens: 42,
-  whatsapp: "5561999990000",
   veiculo: { modelo: "VW Gol", cor: "Branco", placa: "JKP1D45", consumo: 11.5 },
 };
 
 const MOTORISTAS = {
   m1: {
     id: "m1", nome: "Mariana Alves", curso: "Engenharia Florestal", cor: "#178049",
-    rating: 4.9, viagens: 87, whatsapp: "5561999990001", desde: "2024",
+    rating: 4.9, viagens: 87, desde: "2024",
     veiculo: { modelo: "Chevrolet Onix", cor: "Prata", placa: "JKL2A•4", consumo: 13.5 },
     avaliacoes: [
       { autor: "Beatriz L.", nota: 5, quando: "há 3 dias", texto: "Super pontual e dirige com cuidado. Trajeto tranquilo até o Darcy." },
@@ -44,7 +43,7 @@ const MOTORISTAS = {
   },
   m2: {
     id: "m2", nome: "Rafael Souza", curso: "Ciência da Computação", cor: "#0e5aa7",
-    rating: 4.8, viagens: 53, whatsapp: "5561999990002", desde: "2024",
+    rating: 4.8, viagens: 53, desde: "2024",
     veiculo: { modelo: "Hyundai HB20", cor: "Branco", placa: "QRS7H•1", consumo: 13.0 },
     avaliacoes: [
       { autor: "Marcos V.", nota: 5, quando: "há 4 dias", texto: "Saiu no horário combinado e levou todo mundo em segurança." },
@@ -53,7 +52,7 @@ const MOTORISTAS = {
   },
   m3: {
     id: "m3", nome: "Letícia Gomes", curso: "Direito", cor: "#b0337a",
-    rating: 5.0, viagens: 124, whatsapp: "5561999990003", desde: "2023",
+    rating: 5.0, viagens: 124, desde: "2023",
     veiculo: { modelo: "Honda Civic", cor: "Preto", placa: "BCD4F•9", consumo: 11.0 },
     avaliacoes: [
       { autor: "Pedro H.", nota: 5, quando: "há 2 dias", texto: "Caroneira nota 10, sempre confiável. Já é a 5ª vez." },
@@ -63,7 +62,7 @@ const MOTORISTAS = {
   },
   m4: {
     id: "m4", nome: "Pedro Henrique", curso: "Medicina", cor: "#c2410c",
-    rating: 4.7, viagens: 31, whatsapp: "5561999990004", desde: "2025",
+    rating: 4.7, viagens: 31, desde: "2025",
     veiculo: { modelo: "Jeep Renegade", cor: "Cinza", placa: "MNO9K•2", consumo: 9.0 },
     avaliacoes: [
       { autor: "Larissa F.", nota: 5, quando: "há 5 dias", texto: "Carona segura e trajeto rápido. Voltarei a pedir." },
@@ -71,7 +70,7 @@ const MOTORISTAS = {
   },
   m5: {
     id: "m5", nome: "Camila Ribeiro", curso: "Arquitetura e Urbanismo", cor: "#7c3aed",
-    rating: 4.9, viagens: 66, whatsapp: "5561999990005", desde: "2024",
+    rating: 4.9, viagens: 66, desde: "2024",
     veiculo: { modelo: "Renault Kwid", cor: "Vermelho", placa: "DEF3G•7", consumo: 15.0 },
     avaliacoes: [
       { autor: "Rafael S.", nota: 5, quando: "há 6 dias", texto: "Muito organizada, avisa tudo com antecedência no zap." },
@@ -121,9 +120,9 @@ const MINHAS_CARONAS = [
     data: "Hoje, qui 26/06", saida: "18:40", chegada: "19:10",
     vagas: 3, vagasTotal: 3, desvioKm: 2.0,
     solicitantes: [
-      { id: "s1", nome: "João Vítor", curso: "Engenharia Mecânica", cor: "#0e5aa7", rating: 4.8, whatsapp: "5561988880001", status: "pendente" },
-      { id: "s2", nome: "Beatriz Lima", curso: "Psicologia", cor: "#b0337a", rating: 4.9, whatsapp: "5561988880002", status: "pendente" },
-      { id: "s3", nome: "Gabriel Costa", curso: "Economia", cor: "#178049", rating: 4.6, whatsapp: "5561988880003", status: "aceito" },
+      { id: "s1", nome: "João Vítor", curso: "Engenharia Mecânica", cor: "#0e5aa7", rating: 4.8, status: "pendente" },
+      { id: "s2", nome: "Beatriz Lima", curso: "Psicologia", cor: "#b0337a", rating: 4.9, status: "pendente" },
+      { id: "s3", nome: "Gabriel Costa", curso: "Economia", cor: "#178049", rating: 4.6, status: "aceito" },
     ],
   },
   {
@@ -131,7 +130,7 @@ const MINHAS_CARONAS = [
     data: "Amanhã, sex 27/06", saida: "07:00", chegada: "07:20",
     vagas: 2, vagasTotal: 2, desvioKm: 1.0,
     solicitantes: [
-      { id: "s4", nome: "Mariana Dias", curso: "Letras", cor: "#c2410c", rating: 5.0, whatsapp: "5561988880004", status: "pendente" },
+      { id: "s4", nome: "Mariana Dias", curso: "Letras", cor: "#c2410c", rating: 5.0, status: "pendente" },
     ],
   },
 ];

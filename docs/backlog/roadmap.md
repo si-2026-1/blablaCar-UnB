@@ -21,7 +21,7 @@ progressivas.
   - publicação de carona;
   - busca de caronas e custo_sugerido;
   - solicitação e resposta de vaga;
-  - chat temporário entre participantes aceitos.
+  - chat temporário entre participantes aceitos (representado no protótipo em modo simulado).
 
 ## Entrega 3 - Confiança e acabamento
 

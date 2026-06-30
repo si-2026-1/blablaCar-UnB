@@ -39,7 +39,7 @@ http://localhost:5500
 
 Fluxo observado no protótipo:
 
-login -> home com caronas -> detalhes da carona -> solicitação enviada -> minhas viagens.
+login -> home com caronas -> detalhes da carona -> solicitação enviada -> chat da carona -> minhas viagens.
 
 Histórias relacionadas: **H1, H4, H5 e H7**.
 
@@ -47,7 +47,7 @@ Histórias relacionadas: **H1, H4, H5 e H7**.
 
 Fluxo observado no protótipo:
 
-oferecer carona -> carona publicada -> minhas caronas com pedido pendente -> pedido aceito.
+oferecer carona -> carona publicada -> minhas caronas com pedido pendente -> pedido aceito -> chat da carona.
 
 Histórias relacionadas: **H3, H5 e H7**.
 
@@ -62,16 +62,17 @@ O protótipo já representa elementos de confiança por meio de:
 
 Histórias relacionadas: **H2 e H8 (parcial)**.
 
-## Limitação atual: comunicação via WhatsApp
+## Limitação atual: chat interno simulado
 
-No backlog, a história H6 prevê **chat interno temporário**. No protótipo atual,
-a comunicação foi simplificada com contato via WhatsApp após o aceite.
+No protótipo atual, o chat interno temporário foi representado de forma
+simulada, sem persistência de mensagens e sem backend.
 
-Registro de evolução do MVP:
+## Próximas melhorias
 
-- substituir contato externo por chat interno temporário;
-- reduzir exposição de telefone pessoal;
-- manter a comunicação vinculada à carona e ao período da viagem.
+Evolução planejada para o MVP:
+
+- manter o chat vinculado à carona e ao período da viagem;
+- evoluir para envio/armazenamento real de mensagens.
 
 ## Telas do protótipo e vínculo com histórias
 
@@ -135,6 +136,13 @@ Histórias relacionadas: **H2** e **H8 (parcial)**
 
 ![Perfil do usuário](../assets/prototipo/10-perfil-usuario.png)
 
+### 11) Chat da carona (simulação visual)
+
+Histórias relacionadas: **H6**
+
+Tela implementada no protótipo como simulação visual, sem print dedicado nesta
+versão da documentação.
+
 ## Cobertura das histórias (H1 a H9)
 
 | História | Descrição | Cobertura no protótipo |
@@ -144,7 +152,7 @@ Histórias relacionadas: **H2** e **H8 (parcial)**
 | H3 | Oferecer carona | Representada |
 | H4 | Buscar carona e rateio | Representada |
 | H5 | Pedir vaga e receber resposta | Representada |
-| H6 | Comunicação/chat temporário | Parcial |
+| H6 | Comunicação/chat temporário | Representada de forma simplificada |
 | H7 | Acompanhar/cancelar/concluir carona | Parcial |
 | H8 | Avaliações/reputação | Parcial |
 | H9 | Denúncia/bloqueio | Planejada |

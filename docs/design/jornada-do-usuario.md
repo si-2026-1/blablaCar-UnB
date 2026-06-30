@@ -10,7 +10,7 @@ Descrição dos fluxos que já aparecem no protótipo real do UnBlaBlaCar.
 4. Confere rota, motorista, veículo, vagas e rateio sugerido.
 5. Envia solicitação de vaga.
 6. Acompanha o pedido em Minhas viagens.
-7. Se aceito, combina encontro com o motorista pelo contato exibido no protótipo.
+7. Se aceito, combina encontro com o motorista pelo chat interno temporário da carona.
 
 ## Jornada do motorista
 
@@ -19,7 +19,8 @@ Descrição dos fluxos que já aparecem no protótipo real do UnBlaBlaCar.
 3. Publica a carona.
 4. Acompanha pedidos em Minhas caronas.
 5. Aceita ou recusa solicitações.
-6. Visualiza caronas em andamento/publicadas.
+6. Combina detalhes de embarque com passageiros aceitos no chat da carona.
+7. Visualiza caronas em andamento/publicadas.
 
 ## Jornada de confiança
 
@@ -29,6 +30,7 @@ No estado atual do protótipo, a confiança é representada por:
 - perfil do usuário com informações acadêmicas;
 - dados do veículo do motorista;
 - reputação exibida no perfil;
+- histórico básico de viagens e solicitações;
 - transparência do rateio sugerido antes da solicitação.
 
 ## Melhorias futuras

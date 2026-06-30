@@ -48,7 +48,6 @@ nav:
       - Visão e Escopo: projeto/visao-e-escopo.md
       - Requisitos: projeto/requisitos.md
       - Decisões e Riscos: projeto/decisoes-e-riscos.md
-      - Glossário: projeto/glossario.md
   - Backlog:
       - Épicos e Histórias: backlog/epicos-e-historias.md
       - Rastreabilidade: backlog/rastreabilidade.md
