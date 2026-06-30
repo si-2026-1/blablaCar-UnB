@@ -143,7 +143,7 @@ Critérios de aceitação (Dado / Quando / Então):
 
 - Ator principal: Motorista e passageiro participante.
 - Épico relacionado: E3.
-- Requisitos relacionados: RF13, RNF04.
+- Requisitos relacionados: RF09, RF13, RNF04.
 - Prioridade: MVP.
 - Pré-condições: carona existente com participantes.
 - Descrição narrativa: Como participante, quero cancelar ou concluir uma carona,

@@ -26,7 +26,7 @@ progressivas.
 ## Entrega 3 - Confiança e acabamento
 
 - Histórias: H7, H8, H9.
-- Requisitos envolvidos: RF11, RF12, RF13, RNF01, RNF03, RNF04, RNF06.
+- Requisitos envolvidos: RF09, RF11, RF12, RF13, RNF01, RNF03, RNF04, RNF06.
 - Foco:
   - cancelamento e conclusão de carona;
   - avaliação pós-viagem;

@@ -15,6 +15,7 @@ Esta página relaciona os requisitos do UnBlaBlaCar com os épicos, histórias d
 | Solicitação de carona | E3 — Combinar e realizar a viagem | H5 — Solicitação de carona | Detalhes da carona / Solicitação enviada | Representado |
 | Aceite ou recusa de passageiro | E3 — Combinar e realizar a viagem | H5 — Solicitação de carona | Minhas caronas / Pedido aceito | Representado |
 | Comunicação entre participantes | E3 — Combinar e realizar a viagem | H6 — Comunicação entre passageiro e motorista | Chat da carona / comunicação do protótipo | Representado de forma simplificada |
+| Acompanhamento de status da carona | E3 — Combinar e realizar a viagem | H7 — Cancelar ou concluir carona | Minhas viagens | Representado parcialmente |
 | Cancelamento e conclusão de carona | E3 — Combinar e realizar a viagem | H7 — Cancelar ou concluir carona | Minhas viagens | Representado parcialmente |
 | Avaliação e reputação | E4 — Construir confiança na comunidade | H8 — Avaliação pós-viagem | Perfil do usuário | Representado parcialmente |
 | Denúncia e bloqueio | E4 — Construir confiança na comunidade | H9 — Denúncia e bloqueio | Não representado no protótipo atual | Planejado |

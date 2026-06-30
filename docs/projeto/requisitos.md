@@ -18,7 +18,7 @@ Esta página apresenta os requisitos principais do MVP do UnBlaBlaCar.
 | RF10 | Permitir comunicação entre participantes aceitos na carona. | MVP | Chat interno simulado disponível após aceite da solicitação. |
 | RF11 | Exibir informações de reputação do usuário. | MVP | Perfil mostra informações de reputação e avaliações. |
 | RF12 | Planejar denúncia e bloqueio para situações de risco ou desconforto. | Futuro próximo | Requisito documentado como evolução para versão futura. |
-| RF13 | Permitir cancelamento e conclusão de carona conforme regras do fluxo. | MVP | Passageiro e motorista conseguem cancelar conforme regra e motorista conclui a carona ao fim do trajeto. |
+| RF13 | O sistema deve permitir que passageiro e motorista cancelem uma solicitação ou carona conforme as regras do fluxo, e que o motorista conclua a carona ao final do trajeto. | MVP | Passageiro e motorista conseguem cancelar conforme regra e motorista conclui a carona ao fim do trajeto. |
 
 ## Requisitos não funcionais
 

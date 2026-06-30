@@ -14,7 +14,10 @@ Este modelo cobre:
 - solicitação e aceite de vaga;
 - chat temporário entre participantes aceitos;
 - avaliação após carona concluída;
-- denúncia e bloqueio básico.
+- modelagem de denúncia e bloqueio por completude documental.
+
+Observação: as entidades de denúncia e bloqueio estão modeladas para evolução
+futura (futuro próximo) e não compõem o núcleo operacional do MVP atual.
 
 ## Entidades
 
