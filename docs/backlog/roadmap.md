@@ -25,16 +25,16 @@ progressivas.
 
 ## Entrega 3 - Confiança e acabamento
 
-- Histórias: H7, H8, H9.
-- Requisitos envolvidos: RF09, RF11, RF12, RF13, RNF01, RNF03, RNF04, RNF06.
+- Histórias: H7, H8.
+- Requisitos envolvidos: RF09, RF11, RF13, RNF04, RNF06.
 - Foco:
   - cancelamento e conclusão de carona;
   - avaliação pós-viagem;
-  - denúncia e bloqueio básico;
   - consolidação do protótipo funcional documentado;
   - ajustes de privacidade e revisão final da documentação.
 
 ## Ideias futuras
 
+- H9/RF12: denúncia e bloqueio como evolução futura/futuro próximo.
 - Gamificação para incentivar boas práticas na comunidade.
 - Sustentabilidade com indicadores simples, como estimativa de CO2 evitado.

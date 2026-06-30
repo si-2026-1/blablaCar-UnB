@@ -26,13 +26,14 @@ Público inicial: estudantes da UnB com e-mail institucional validado.
 - Chat temporário após aceite.
 - Sugestão de rateio de combustível, sem pagamento na plataforma.
 - Encerramento da viagem e avaliação.
-- Mecanismos básicos de segurança.
+- Segurança básica no MVP por autenticação institucional, privacidade dos dados, comunicação interna entre participantes e regras mínimas de confiança/rastreabilidade.
 
 ## O que fica fora do MVP
 
 - Aplicativo nativo para Android/iOS.
 - Processamento de pagamento dentro da plataforma.
 - Suporte a público fora da comunidade inicial.
+- Denúncia e bloqueio ficam registrados como evolução futura/futuro próximo, em coerência com RF12 e H9.
 
 ## Decisões de produto
 
