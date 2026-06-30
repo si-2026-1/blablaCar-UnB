@@ -38,3 +38,24 @@ rastreável e coerente com o escopo acadêmico do projeto.
 - A plataforma é de caronas solidárias e não tem finalidade lucrativa.
 - O sistema sugere custo/rateio, mas não processa pagamentos.
 - O produto não é Uber, 99 nem serviço comercial de transporte.
+
+## Regras de negócio
+
+- Apenas estudantes com e-mail institucional podem usar o MVP.
+- O motorista compartilha uma viagem que já faria.
+- O rateio sugerido não representa lucro.
+- Chat interno temporário é a solução planejada para comunicação.
+- Avaliações devem ocorrer apenas após interação real ou carona concluída.
+- Denúncia e bloqueio são mecanismos de segurança da comunidade.
+
+## Restrições do MVP
+
+- Não há backend de pagamento ou cobrança.
+- O protótipo representa fluxos principais com algumas etapas simuladas.
+- O escopo é acadêmico e não cobre operação comercial.
+
+## Privacidade e segurança
+
+- Telefone pessoal não é obrigatório e não deve ser exposto como regra do produto.
+- Endereço residencial completo não deve ser exibido.
+- Dados de interação devem ficar restritos ao contexto da carona.

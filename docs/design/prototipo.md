@@ -96,7 +96,7 @@ Histórias relacionadas: **H4**
 
 ### 4) Detalhes com solicitação enviada
 
-Histórias relacionadas: **H5** e **H6 (parcial)**
+Histórias relacionadas: **H5** e **H6 (representada de forma simplificada)**
 
 ![Detalhes da carona com solicitação](../assets/prototipo/04-detalhes-carona-solicitacao.png)
 
@@ -126,7 +126,7 @@ Histórias relacionadas: **H5**
 
 ### 9) Minhas caronas com pedido aceito
 
-Histórias relacionadas: **H5**, **H7 (parcial)** e **H6 (parcial)**
+Histórias relacionadas: **H5**, **H7 (parcial)** e **H6 (representada de forma simplificada)**
 
 ![Minhas caronas com pedido aceito](../assets/prototipo/09-minhas-caronas-pedido-aceito.png)
 

@@ -31,6 +31,7 @@ progressivas.
   - cancelamento e conclusão de carona;
   - avaliação pós-viagem;
   - denúncia e bloqueio básico;
+  - consolidação do protótipo funcional documentado;
   - ajustes de privacidade e revisão final da documentação.
 
 ## Ideias futuras

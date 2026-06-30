@@ -26,6 +26,23 @@ Estudantes da UnB com acesso por e-mail institucional.
 - comunicação entre participantes;
 - perfil e reputação.
 
+## Atores principais
+
+| Ator | Responsabilidades |
+|---|---|
+| Passageiro | Buscar caronas, solicitar vaga, acompanhar viagens e avaliar. |
+| Motorista | Publicar caronas, aceitar ou recusar solicitações e gerenciar viagens. |
+| Ambos | Manter perfil, preservar confiança e respeitar privacidade. |
+
+## Principais entregas acadêmicas
+
+- requisitos funcionais e não funcionais;
+- épicos e histórias de usuário;
+- rastreabilidade entre requisitos, histórias e protótipo;
+- modelo de dados inicial;
+- protótipo funcional em HTML/CSS/JS;
+- apresentação do projeto.
+
 ## Aviso importante
 
 O UnBlaBlaCar não é Uber, 99 nem serviço de transporte comercial. O foco é

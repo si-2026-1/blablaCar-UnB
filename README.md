@@ -1,7 +1,7 @@
 # UnBlaBlaCar
 
 Projeto acadêmico de Sistemas de Informação para planejar e prototipar uma
-plataforma de caronas solidárias entre estudantes da UnB.
+plataforma web mobile-first de caronas solidárias entre estudantes da UnB.
 
 O produto é apresentado visualmente como UnBlaBlaCar; o repositório mantém o
 nome blablaCar-UnB.
@@ -10,6 +10,11 @@ nome blablaCar-UnB.
 
 Há muitos assentos vazios em trajetos recorrentes para a universidade enquanto
 alunos enfrentam deslocamentos longos e caros.
+
+## Proposta
+
+Conectar estudantes para compartilhar viagens que já aconteceriam, com foco em
+organização, confiança e privacidade.
 
 ## Escopo do MVP
 
@@ -23,7 +28,24 @@ Aplicação web mobile-first com:
 - reputação básica.
 
 Importante: não é Uber/99 nem transporte comercial. Não há pagamento dentro do
-app e o objetivo é compartilhar custos, sem lucro.
+app e o objetivo é compartilhar custos, sem finalidade lucrativa.
+
+## Atores principais
+
+| Ator | Responsabilidades |
+|---|---|
+| Passageiro | Buscar caronas, solicitar vaga, acompanhar viagens e avaliar. |
+| Motorista | Publicar caronas, aceitar ou recusar solicitações e gerenciar viagens. |
+| Ambos | Manter perfil, preservar confiança e respeitar privacidade. |
+
+## Principais entregas
+
+- Requisitos funcionais e não funcionais.
+- Épicos e histórias de usuário.
+- Rastreabilidade entre requisitos, histórias e protótipo.
+- Modelo de dados inicial.
+- Protótipo funcional em HTML, CSS e JavaScript.
+- Apresentação do projeto.
 
 ## Protótipo
 

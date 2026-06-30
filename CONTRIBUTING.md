@@ -1,6 +1,6 @@
 # Contribuindo
 
-Obrigado por contribuir com o BlablaCar UnB.
+Obrigado por contribuir com o UnBlaBlaCar.
 
 ## Fluxo recomendado
 

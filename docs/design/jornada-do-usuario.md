@@ -37,7 +37,7 @@ No estado atual do protótipo, a confiança é representada por:
 
 Evoluções previstas para o MVP:
 
-- substituir contato externo por chat interno temporário;
+- evoluir o chat interno temporário simulado para troca real de mensagens;
 - criar fluxo interno de denúncia e bloqueio (H9);
 - incluir avaliação pós-viagem com tela dedicada (H8 completo);
 - melhorar acompanhamento de cancelamento/conclusão de carona (H7 completo).
