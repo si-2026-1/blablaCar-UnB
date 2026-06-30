@@ -1,274 +1,113 @@
-# Modelo de dados
+# Modelo de Dados
 
-Modelagem inicial e consistente com o MVP acadêmico do UnBlaBlaCar. O objetivo
-é descrever as entidades e regras de negócio, sem implementar banco de dados ou
-código.
+Modelagem atualizada e consistente com o MVP acadêmico do UnBlaBlaCar. O objetivo é descrever as entidades e regras de negócio essenciais para o funcionamento básico do sistema, focando na interação entre a comunidade universitária, o cadastro de veículos e a gestão de corridas.
 
 ## Escopo do modelo no MVP
 
-Este modelo cobre:
+Este modelo cobre exclusivamente o núcleo operacional:
+* Autenticação e perfil baseado no registro acadêmico;
+* Cadastro de carros pelos proprietários;
+* Oferta de corridas (caronas);
+* Vínculo de passageiros às corridas ofertadas.
 
-- autenticação institucional e perfil de estudante;
-- cadastro de veículo;
-- publicação de carona;
-- solicitação e aceite de vaga;
-- chat temporário entre participantes aceitos;
-- avaliação após carona concluída;
-- modelagem de denúncia e bloqueio por completude documental.
-
-Observação: as entidades de denúncia e bloqueio estão modeladas para evolução
-futura (futuro próximo) e não compõem o núcleo operacional do MVP atual.
+---
 
 ## Entidades
 
-### Usuario
+### USUARIOS
 
-Finalidade: representar o estudante autenticado que pode atuar como motorista ou
-passageiro.
+**Finalidade:** Representar o estudante cadastrado no sistema, que pode atuar como motorista proprietário de um veículo ou como passageiro em uma corrida. O vínculo principal é feito pelo registro institucional.
 
-Campos principais:
+**Campos principais:**
+* `matricula` (PK - NUMBER)
+* `nome_completo` (VARCHAR)
+* `curso` (VARCHAR)
+* `numero_celular` (VARCHAR)
 
-- id
-- nome
-- email_institucional (único)
-- email_verificado_em
-- foto_perfil (opcional)
-- telefone (opcional)
-- curso (opcional)
-- ativo
-- data_criacao
+**Relacionamentos:**
+* USUARIOS 1:N CARROS (como proprietário)
+* USUARIOS 1:N CORRIDAS (como motorista)
+* USUARIOS 1:N passageiros_corrida (como passageiro)
 
-Relacionamentos:
+**Cardinalidade importante:**
+* Um usuário pode registrar zero ou vários carros.
+* Um usuário pode participar de zero ou várias corridas, seja ofertando ou como passageiro.
 
-- Usuario 1:N Veiculo
-- Usuario 1:N Carona (como motorista)
-- Usuario 1:N SolicitacaoCarona (como passageiro)
-- Usuario 1:N Mensagem (como remetente)
-- Usuario 1:N Avaliacao (como avaliador)
-- Usuario 1:N Avaliacao (como avaliado)
-- Usuario 1:N Denuncia (como denunciante)
-- Usuario 1:N Denuncia (como denunciado)
-- Usuario 1:N Bloqueio (como bloqueador)
-- Usuario 1:N Bloqueio (como bloqueado)
+---
 
-Cardinalidade importante:
+### CARROS
 
-- um usuário pode ter zero ou mais veículos;
-- um veículo pertence obrigatoriamente a exatamente um usuário.
+**Finalidade:** Armazenar os dados dos veículos cadastrados pelos usuários para uso nas corridas.
 
-### Veiculo
+**Campos principais:**
+* `placa` (PK - VARCHAR)
+* `modelo` (VARCHAR)
+* `marca` (VARCHAR)
+* `matricula_proprietario` (FK - NUMBER)
 
-Finalidade: armazenar dados básicos do veículo utilizado pelo motorista.
+**Relacionamentos:**
+* CARROS N:1 USUARIOS (obrigatório, todo carro tem um proprietário)
+* CARROS 1:N CORRIDAS
 
-Campos principais:
+---
 
-- id
-- usuario_id (FK obrigatória para Usuario)
-- modelo
-- cor
-- placa
-- ativo
-- data_cadastro
+### CORRIDAS
 
-Relacionamentos:
+**Finalidade:** Representar o trajeto ofertado por um motorista, utilizando um carro específico.
 
-- Veiculo N:1 Usuario (obrigatório)
-- Veiculo 1:N Carona
+**Campos principais:**
+* `id_corrida` (PK - NUMBER)
+* `partida` (VARCHAR)
+* `destino` (VARCHAR)
+* `preco` (NUMBER)
+* `tam_trajeto_km` (NUMBER)
+* `matricula_motorista` (FK - NUMBER)
+* `placa_carro` (FK - VARCHAR)
 
-### Carona
+**Relacionamentos:**
+* CORRIDAS N:1 USUARIOS (motorista responsável)
+* CORRIDAS N:1 CARROS (veículo utilizado)
+* CORRIDAS 1:N passageiros_corrida
 
-Finalidade: representar uma carona ofertada por um motorista com vagas.
+---
 
-Campos principais:
+### passageiros_corrida
 
-- id
-- motorista_id (FK obrigatória para Usuario)
-- veiculo_id (FK obrigatória para Veiculo)
-- origem
-- destino
-- data_hora_partida
-- vagas_totais
-- vagas_disponiveis
-- custo_sugerido
-- status (aberta, em_andamento, concluida, cancelada)
-- data_criacao
+**Finalidade:** Entidade associativa que resolve a relação de muitos-para-muitos entre usuários e corridas, registrando quais estudantes estão ocupando as vagas de uma determinada viagem como passageiros.
 
-Relacionamentos:
+**Campos principais:**
+* `id_corrida` (PK, FK - NUMBER)
+* `matricula_passageiro` (PK, FK - NUMBER)
 
-- Carona N:1 Usuario (motorista)
-- Carona N:1 Veiculo
-- Carona 1:N SolicitacaoCarona
-- Carona 1:N Mensagem
-- Carona 1:N Avaliacao
-- Carona 1:N Denuncia (opcional)
+**Relacionamentos:**
+* passageiros_corrida N:1 CORRIDAS
+* passageiros_corrida N:1 USUARIOS
 
-### Solicitacao (SolicitacaoCarona)
+---
 
-Finalidade: representar o pedido de vaga de um passageiro em uma carona.
+## Regras de Relacionamento e Integridade
 
-Observação: esta entidade substitui abordagens de tabela de associação genérica
-de passageiros por um modelo com status e histórico de decisão.
+1. **Dependência de Propriedade:** Um carro não existe no sistema sem estar vinculado à matrícula de um usuário proprietário (`matricula_proprietario` é FK obrigatória).
+2. **Consistência da Corrida:** Toda corrida precisa obrigatoriamente de um motorista responsável (`matricula_motorista`) e de um veículo cadastrado (`placa_carro`).
+3. **Associação de Passageiros:** A tabela `passageiros_corrida` utiliza uma chave primária composta (`id_corrida`, `matricula_passageiro`). Isso garante a unicidade, impedindo que o mesmo usuário ocupe mais de um assento ou faça solicitações duplicadas para a mesma viagem.
 
-Padronização do modelo: o pedido de vaga do passageiro é representado pela
-entidade SolicitacaoCarona em toda a documentação do projeto.
+---
 
-Campos principais:
+## Modelo Lógico / Físico
 
-- id
-- carona_id (FK obrigatória para Carona)
-- passageiro_id (FK obrigatória para Usuario)
-- status (pendente, aceita, recusada, cancelada)
-- data_solicitacao
-- data_resposta (opcional)
+Abaixo está o descritivo relacional das tabelas, seguido pelo diagrama correspondente.
 
-Relacionamentos:
+* **USUARIOS** (`matricula` PK)
+* **CARROS** (`placa` PK, `matricula_proprietario` FK -> USUARIOS.matricula)
+* **CORRIDAS** (`id_corrida` PK, `matricula_motorista` FK -> USUARIOS.matricula, `placa_carro` FK -> CARROS.placa)
+* **passageiros_corrida** (`id_corrida` PK/FK -> CORRIDAS.id_corrida, `matricula_passageiro` PK/FK -> USUARIOS.matricula)
 
-- SolicitacaoCarona N:1 Carona
-- SolicitacaoCarona N:1 Usuario (passageiro)
+![Modelo Físico](https://github.com/si-2026-1/blablaCar-UnB/blob/main/assets/modelo-fisico.png)
 
-### Mensagem
+---
 
-Finalidade: registrar mensagens do chat temporário da carona.
+## Modelo Conceitual
 
-Campos principais:
+O diagrama de entidade-relacionamento (visão de alto nível) ilustra a semântica da regra de negócio de forma simplificada, abstraindo as tabelas associativas e focando nas relações diretas de posse e ação.
 
-- id
-- carona_id (FK obrigatória para Carona)
-- remetente_id (FK obrigatória para Usuario)
-- conteudo
-- data_envio
-
-Relacionamentos:
-
-- Mensagem N:1 Carona
-- Mensagem N:1 Usuario (remetente)
-
-### Avaliacao
-
-Finalidade: registrar feedback entre participantes após a conclusão da carona.
-
-Campos principais:
-
-- id
-- carona_id (FK obrigatória para Carona)
-- avaliador_id (FK obrigatória para Usuario)
-- avaliado_id (FK obrigatória para Usuario)
-- nota
-- comentario (opcional)
-- data_avaliacao
-
-Relacionamentos:
-
-- Avaliacao N:1 Carona
-- Avaliacao N:1 Usuario (avaliador)
-- Avaliacao N:1 Usuario (avaliado)
-
-### Denuncia
-
-Finalidade: registrar problemas de conduta ou segurança após interação real
-entre usuários.
-
-Campos principais:
-
-- id
-- denunciante_id (FK obrigatória para Usuario)
-- denunciado_id (FK obrigatória para Usuario)
-- carona_id (FK opcional para Carona)
-- motivo
-- descricao (opcional)
-- status_analise (aberta, em_analise, concluida)
-- data_registro
-
-Relacionamentos:
-
-- Denuncia N:1 Usuario (denunciante)
-- Denuncia N:1 Usuario (denunciado)
-- Denuncia N:1 Carona (opcional)
-
-### Bloqueio
-
-Finalidade: impedir novas interações diretas entre dois usuários após incidente.
-
-Campos principais:
-
-- id
-- bloqueador_id (FK obrigatória para Usuario)
-- bloqueado_id (FK obrigatória para Usuario)
-- motivo (opcional)
-- data_bloqueio
-- ativo
-
-Relacionamentos:
-
-- Bloqueio N:1 Usuario (bloqueador)
-- Bloqueio N:1 Usuario (bloqueado)
-
-## Regras de relacionamento e integridade
-
-1. Veiculo dependente de Usuario: um veículo não existe sem usuário dono (FK
-	obrigatória).
-
-2. Consistência motorista x veículo: uma carona só pode usar veículo pertencente
-	ao motorista da própria carona.
-
-Essa regra garante que o Veiculo utilizado na carona pertença obrigatoriamente
-ao Usuario que atua como motorista.
-
-3. Unicidade de solicitação por passageiro: um passageiro não pode solicitar a
-   mesma carona mais de uma vez. Restrição recomendada: UNIQUE (carona_id,
-   passageiro_id).
-
-4. Controle de vagas: solicitação aceita reduz vagas_disponiveis em 1;
-	cancelamento de solicitação aceita devolve a vaga.
-
-5. Chat temporário: mensagens só podem ser enviadas por motorista ou passageiros
-	com solicitação aceita para a carona.
-
-6. Avaliacao pós-conclusão: avaliação só pode ser criada quando a carona estiver
-   com status concluida.
-
-7. Denuncia e bloqueio após interação: denúncia e bloqueio devem ocorrer apenas
-	entre usuários que já interagiram em uma mesma carona.
-
-8. Privacidade: telefone pessoal não é obrigatório; endereço residencial completo não deve ser
-	armazenado/exposto; placa pode ser exibida parcialmente quando necessário; histórico e
-	localização devem ser protegidos e exibidos apenas no contexto necessário da carona.
-
-## Modelo lógico resumido
-
-- Usuario (id PK)
-- Veiculo (id PK, usuario_id FK -> Usuario.id)
-- Carona (id PK, motorista_id FK -> Usuario.id, veiculo_id FK -> Veiculo.id)
-- SolicitacaoCarona (id PK, carona_id FK -> Carona.id, passageiro_id FK ->
-  Usuario.id, UNIQUE(carona_id, passageiro_id))
-- Mensagem (id PK, carona_id FK -> Carona.id, remetente_id FK -> Usuario.id)
-- Avaliacao (id PK, carona_id FK -> Carona.id, avaliador_id FK -> Usuario.id,
-  avaliado_id FK -> Usuario.id)
-- Denuncia (id PK, denunciante_id FK -> Usuario.id, denunciado_id FK ->
-  Usuario.id, carona_id FK opcional -> Carona.id)
-- Bloqueio (id PK, bloqueador_id FK -> Usuario.id, bloqueado_id FK ->
-  Usuario.id, UNIQUE(bloqueador_id, bloqueado_id))
-
-## Diagrama ER (visão simplificada)
-
-```mermaid
-erDiagram
-	USUARIO ||--o{ VEICULO : possui
-	USUARIO ||--o{ CARONA : cria
-	VEICULO ||--o{ CARONA : usado_em
-	CARONA ||--o{ SOLICITACAO_CARONA : recebe
-	USUARIO ||--o{ SOLICITACAO_CARONA : solicita
-	CARONA ||--o{ MENSAGEM : contem
-	USUARIO ||--o{ MENSAGEM : envia
-	CARONA ||--o{ AVALIACAO : gera
-	USUARIO ||--o{ AVALIACAO : avalia
-	USUARIO ||--o{ AVALIACAO : e_avaliado
-	USUARIO ||--o{ DENUNCIA : denuncia
-	USUARIO ||--o{ DENUNCIA : e_denunciado
-	CARONA |o--o{ DENUNCIA : contexto
-	USUARIO ||--o{ BLOQUEIO : bloqueia
-	USUARIO ||--o{ BLOQUEIO : e_bloqueado
-```
-
-Observação: este é um documento conceitual para planejamento acadêmico; não
-representa implementação de código.
+![Modelo Conceitual](https://github.com/si-2026-1/blablaCar-UnB/blob/main/assets/modelo-conceitual.png)
