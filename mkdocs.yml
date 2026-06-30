@@ -1,6 +1,5 @@
 site_name: UnBlaBlaCar
-site_description:
-  Sistema de caronas solidárias para estudantes da Universidade de Brasília
+site_description: Sistema de caronas solidárias para estudantes da Universidade de Brasília
 site_url: https://si-2026-1.github.io/blablaCar-UnB/
 
 theme:
@@ -45,10 +44,10 @@ markdown_extensions:
 nav:
   - Início: index.md
   - Projeto:
-    - Visão e Escopo: projeto/visao-e-escopo.md
-    - Requisitos: projeto/requisitos.md
-    - Decisões e Riscos: projeto/decisoes-e-riscos.md
-    - Glossário: projeto/glossario.md
+      - Visão e Escopo: projeto/visao-e-escopo.md
+      - Requisitos: projeto/requisitos.md
+      - Decisões e Riscos: projeto/decisoes-e-riscos.md
+      - Glossário: projeto/glossario.md
   - Backlog:
       - Épicos e Histórias: backlog/epicos-e-historias.md
       - Rastreabilidade: backlog/rastreabilidade.md
