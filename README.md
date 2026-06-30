@@ -56,6 +56,7 @@ Para executar localmente:
 ```bash
 cd prototype
 python -m http.server 5500
+```
 
 Abra em `http://localhost:5500`.
 

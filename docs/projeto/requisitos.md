@@ -4,20 +4,20 @@ Esta página apresenta os requisitos principais do MVP do BlablaCar UnB.
 
 ## Requisitos funcionais
 
-| ID | Requisito | Prioridade |
-|---|---|---|
-| RF01 | Permitir login com e-mail institucional da UnB. | MVP |
-| RF02 | Permitir criação de perfil básico do estudante. | MVP |
-| RF03 | Permitir cadastro de veículo para estudantes motoristas. | MVP |
-| RF04 | Permitir que o motorista publique uma carona com origem, destino, horário e vagas. | MVP |
-| RF05 | Permitir que o passageiro visualize caronas disponíveis. | MVP |
-| RF06 | Exibir detalhes da carona, incluindo rota, motorista, veículo, vagas e rateio sugerido. | MVP |
-| RF07 | Permitir que o passageiro solicite uma vaga. | MVP |
-| RF08 | Permitir que o motorista aceite ou recuse solicitações. | MVP |
-| RF09 | Permitir acompanhamento das caronas solicitadas ou publicadas. | MVP |
-| RF10 | Permitir comunicação entre participantes aceitos na carona. | MVP |
-| RF11 | Exibir informações de reputação do usuário. | MVP |
-| RF12 | Planejar denúncia e bloqueio para situações de risco ou desconforto. | Futuro próximo |
+| ID | Requisito | Prioridade | Critério de validação |
+|---|---|---|---|
+| RF01 | Permitir login com e-mail institucional da UnB. | MVP | Fluxo de login institucional executável no protótipo. |
+| RF02 | Permitir criação de perfil básico do estudante. | MVP | Tela de perfil com dados básicos visível no protótipo. |
+| RF03 | Permitir cadastro de veículo para estudantes motoristas. | MVP | Perfil permite visualizar ou informar dados do veículo. |
+| RF04 | Permitir que o motorista publique uma carona com origem, destino, horário e vagas. | MVP | Fluxo de oferecer carona conclui com carona publicada. |
+| RF05 | Permitir que o passageiro visualize caronas disponíveis. | MVP | Home lista caronas disponíveis para navegação. |
+| RF06 | Exibir detalhes da carona, incluindo rota, motorista, veículo, vagas e rateio sugerido. | MVP | Tela de detalhes apresenta rota e dados da carona. |
+| RF07 | Permitir que o passageiro solicite uma vaga. | MVP | Ação de solicitar vaga altera estado para solicitação enviada. |
+| RF08 | Permitir que o motorista aceite ou recuse solicitações. | MVP | Tela de pedidos permite aceitar ou recusar solicitação. |
+| RF09 | Permitir acompanhamento das caronas solicitadas ou publicadas. | MVP | Telas de minhas viagens e minhas caronas exibem status. |
+| RF10 | Permitir comunicação entre participantes aceitos na carona. | MVP | Chat interno simulado disponível após aceite da solicitação. |
+| RF11 | Exibir informações de reputação do usuário. | MVP | Perfil mostra informações de reputação e avaliações. |
+| RF12 | Planejar denúncia e bloqueio para situações de risco ou desconforto. | Futuro próximo | Requisito documentado como evolução para versão futura. |
 
 ## Requisitos não funcionais
 
