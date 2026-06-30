@@ -1,0 +1,233 @@
+\documentclass[aspectratio=169]{beamer}
+\mode<presentation> {
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{} % Remove os símbolos de navegação para um visual mais limpo
+}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\title[UnBlabla Car]{UnBlabla Car}
+\subtitle{Mobilidade Inteligente, Atrito Zero e Networking na UnB}
+
+\author[Equipe]{Antonio Paulo \and Lucas Drumond \and Heitor Estevam \and Luis Bessa \and Gabriel Santana}
+
+\institute[UnB]{
+    Sistemas de Informação - CIC0101 \\ 
+    Universidade de Brasília
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+% APRESENTADOR 1: O ESTRATEGISTA
+%------------------------------------------------
+\section{O Problema}
+\begin{frame}
+\frametitle{Problema de Mobilidade}
+Existe uma ineficiência massiva no transporte diário até o campus Darcy Ribeiro:
+
+\vspace{0.5cm}
+\begin{itemize}
+    \item \textbf{Desperdício de Capital:} Veículos circulam diariamente com assentos vazios, caracterizando subutilização de recursos.
+    \item \textbf{Sobrecarga de Infraestrutura:} Estudantes dependem de transporte público sujeito a atrasos e superlotação.
+    \item \textbf{Desconexão Orgânica:} O isolamento no trajeto impede o networking acadêmico entre diferentes semestres e cursos.
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Nossa Missão:} Conectar a demanda com a oferta de forma segura e eficiente.
+\end{frame}
+
+\begin{frame}
+\frametitle{A Solução: UnBlabla Car}
+\begin{columns}[c]
+\column{.5\textwidth} % Coluna de texto ajustada para 50%
+\textbf{O que o sistema É:}
+\begin{itemize}
+    \item Uma plataforma peer-to-peer focada exclusivamente na comunidade da UnB.
+    \item Um mecanismo automatizado de divisão de custos para incentivar a congregação acadêmica.
+\end{itemize}
+\vspace{0.3cm}
+\textbf{O que o sistema NÃO É:}
+\begin{itemize}
+    \item Não é um serviço de transporte comercial.
+    \item Não visa a obtenção de lucro pelos motoristas ou pela própria plataforma.
+\end{itemize}
+
+\column{.45\textwidth} % Coluna de imagem expandida
+\centering
+% IMAGEM: HOME / MAPA
+\includegraphics[height=0.85\textheight]{home_mapa.jpg}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+% APRESENTADOR 2: O ANALISTA DE SEGURANÇA
+%------------------------------------------------
+\section{Autenticação}
+\begin{frame}
+\frametitle{Segurança e Acesso Restrito}
+\begin{columns}[c]
+\column{.45\textwidth}
+\centering
+% IMAGEM: LOGIN
+\includegraphics[height=0.85\textheight]{login.jpg}
+
+\column{.5\textwidth}
+\textbf{Controle de Acesso (Épico 1)}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{Filtro Institucional:} O sistema exige vínculo comprovado. O acesso é estritamente restrito ao provedor oficial da UnB: \texttt{@aluno.unb.br}.
+    \item \textbf{Mitigação de Riscos:} Elimina perfis falsos e usuários externos à universidade, garantindo a integridade e segurança dos passageiros.
+    \item \textbf{Privacidade por Design:} Não há senhas expostas ou dados pessoais públicos na camada de entrada.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+% APRESENTADOR 3: O ARQUITETO DE LOGÍSTICA
+%------------------------------------------------
+\section{Matching}
+\begin{frame}
+\frametitle{Topologia de Oferta (Motorista)}
+\begin{columns}[c]
+\column{.5\textwidth}
+\textbf{Publicação de Rotas (Épico 2)}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{Fluxo Intuitivo:} O motorista compartilha um trajeto que \textit{já faria}, informando pontos de saída, destino, data e horário.
+    \item \textbf{Controle de Capacidade:} Definição exata de vagas disponíveis no veículo.
+    \item \textbf{Regras de Engajamento:} Espaço para comunicação de observações operacionais (ex: pontualidade, ponto exato no bloco).
+\end{itemize}
+
+\column{.45\textwidth}
+\centering
+% IMAGEM: OFERECER CARONA
+\includegraphics[height=0.85\textheight]{oferecer.jpg}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Confirmação e Disponibilidade}
+\begin{columns}[c]
+\column{.45\textwidth}
+\centering
+% IMAGEM NOVA: FEEDBACK DE SUCESSO
+\includegraphics[height=0.85\textheight]{07-carona-publicada.png}
+
+\column{.5\textwidth}
+\textbf{Máquina de Estados: Aberta}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{Feedback Imediato:} Confirmação visual de que a carona foi adicionada ao sistema.
+    \item \textbf{Visibilidade:} A rota passa a constar no algoritmo de busca para pareamento com passageiros compatíveis.
+    \item \textbf{Notificações:} O motorista entra em estado de escuta, aguardando os alertas do sistema para solicitações de vagas.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+% APRESENTADOR 4: O NEGOCIADOR
+%------------------------------------------------
+\section{Logística}
+\begin{frame}
+\frametitle{Atrito Zero: Detalhamento e Demanda}
+\begin{columns}[c]
+\column{.5\textwidth}
+\textbf{Transparência Financeira (Épico 3)}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{Cálculo Auditável:} O sistema decompõe o custo (trecho em comum + desvio da rota), removendo qualquer tensão social sobre o rateio.
+    \item \textbf{Sem Pagamento no App:} A plataforma atua puramente como canal entre os passageiros e motoristas, organizando a carona.
+    \item \textbf{Solicitação:} O passageiro aciona o pedido e aguarda o aceite para iniciar o protocolo de comunicação (WhatsApp).
+\end{itemize}
+
+\column{.45\textwidth}
+\centering
+% IMAGEM NOVA: DETALHES DA CARONA COM CÁLCULO
+\includegraphics[height=0.85\textheight]{04-detalhes-carona-solicitacao.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Gestão de Vagas: Visão Dual}
+\begin{columns}[c]
+\column{.45\textwidth}
+\centering
+% IMAGEM NOVA: VISÃO PASSAGEIRO
+\includegraphics[height=0.85\textheight]{05-minhas-viagens-passageiro.png}
+
+\column{.5\textwidth}
+\textbf{Comando e Controle Simultâneo}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{Passageiro:} Monitoramento do status "Pendente" com instruções claras sobre o cronograma com horários e locais de embarque/desembarque.
+    \item \textbf{Motorista:} Soberania total. Visualização do perfil do solicitante, curso e avaliação, com decisão de aceitação ou recusa.
+    \item \textbf{Comunicação:} Os canais de comunicação são liberados para conversa entre os usuários para alinhamento das expectativas.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+% Adicionando a imagem do motorista lado a lado ou em sequência rápida
+\begin{frame}
+\frametitle{Gestão de Vagas: Decisão do Motorista}
+\begin{columns}[c]
+\column{.5\textwidth}
+\textbf{Autorização de Embarque}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{Filtro de Confiança:} O motorista observa os detalhes do passageiro (Nota e Curso) antes de permitir a entrada no veículo.
+    \item \textbf{Atualização de Status:} Ao aceitar, o sistema consome uma vaga disponível da oferta original e notifica o passageiro.
+\end{itemize}
+
+\column{.45\textwidth}
+\centering
+% IMAGEM NOVA: VISÃO MOTORISTA
+\includegraphics[height=0.85\textheight]{08-minhas-caronas-pedidos.png}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+% APRESENTADOR 5: O GESTOR DE COMUNIDADE
+%------------------------------------------------
+\section{Reputação}
+\begin{frame}
+\frametitle{Confiança, Gamificação e Sustentabilidade}
+\begin{columns}[c]
+\column{.45\textwidth}
+\centering
+% IMAGEM: PERFIL
+\includegraphics[height=0.85\textheight]{perfil.jpg}
+
+\column{.5\textwidth}
+\textbf{O Futuro do Ecossistema (Épico 4)}
+\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{Métricas de Confiança:} Visualização do perfil, com sistema de notas atribuídas (1 a 5 estrelas) e histórico de viagens do usuário.
+    \item \textbf{Incentivos ao Usuário:} Gamificação através do cálculo de Kg de CO2 economizados ao preencher assentos que estariam vazios e recebimento de medalhas/troféus ao realizar viagens e compartilhar caronas.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\Large{\centerline{Obrigado!}}
+\Large{\centerline{Dúvidas?}}
+
+\vspace{1cm}
+\centering{
+    \color{blue}Sistemas de Informação - UnB
+}
+\end{frame}
+
+\end{document}
