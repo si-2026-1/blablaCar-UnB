@@ -15,7 +15,7 @@ progressivas.
 ## Entrega 2 - Fluxo principal de carona
 
 - Histórias: H3, H4, H5, H6.
-- Requisitos envolvidos: RF04, RF05, RF06, RF07, RF08, RF09, RNF01, RNF02,
+- Requisitos envolvidos: RF04, RF05, RF06, RF07, RF08, RF09, RF10, RNF01, RNF02,
   RNF04, RNF05, RNF07.
 - Foco:
   - publicação de carona;
@@ -26,7 +26,7 @@ progressivas.
 ## Entrega 3 - Confiança e acabamento
 
 - Histórias: H7, H8, H9.
-- Requisitos envolvidos: RF10, RF11, RF12, RNF01, RNF03, RNF04, RNF06.
+- Requisitos envolvidos: RF11, RF12, RF13, RNF01, RNF03, RNF04, RNF06.
 - Foco:
   - cancelamento e conclusão de carona;
   - avaliação pós-viagem;

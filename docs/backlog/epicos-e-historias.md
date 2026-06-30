@@ -99,11 +99,11 @@ Critérios de aceitação (Dado / Quando / Então):
 
 Objetivo: tornar a organização da carona simples e respeitosa.
 
-### H5 — Solicitação de vaga
+### H5 — Solicitação de carona
 
 - Ator principal: Passageiro (solicita) e motorista (responde).
 - Épico relacionado: E3.
-- Requisitos relacionados: RF06, RF07, RNF04.
+- Requisitos relacionados: RF07, RF08, RNF04.
 - Prioridade: MVP.
 - Pré-condições: carona com status aberta e vagas disponíveis.
 - Descrição narrativa: Como passageiro, quero pedir uma vaga e receber uma
@@ -119,11 +119,11 @@ Critérios de aceitação (Dado / Quando / Então):
 - Dado que o passageiro já solicitou a mesma carona, quando tentar solicitar
   novamente, então o sistema impede a duplicidade.
 
-### H6 — Chat temporário
+### H6 — Comunicação entre passageiro e motorista
 
 - Ator principal: Participante aceito da carona.
 - Épico relacionado: E3.
-- Requisitos relacionados: RF08, RNF01, RNF07.
+- Requisitos relacionados: RF10, RNF01, RNF07.
 - Prioridade: MVP.
 - Pré-condições: solicitação aceita ou usuário motorista da carona.
 - Descrição narrativa: Como participante de uma carona aceita, quero conversar
@@ -143,7 +143,7 @@ Critérios de aceitação (Dado / Quando / Então):
 
 - Ator principal: Motorista e passageiro participante.
 - Épico relacionado: E3.
-- Requisitos relacionados: RF10, RNF04.
+- Requisitos relacionados: RF13, RNF04.
 - Prioridade: MVP.
 - Pré-condições: carona existente com participantes.
 - Descrição narrativa: Como participante, quero cancelar ou concluir uma carona,
@@ -188,7 +188,7 @@ Critérios de aceitação (Dado / Quando / Então):
 - Ator principal: Estudante participante de interação prévia.
 - Épico relacionado: E4.
 - Requisitos relacionados: RF12, RNF01, RNF03, RNF04.
-- Prioridade: MVP.
+- Prioridade: Futuro próximo.
 - Pré-condições: usuários com interação prévia em carona.
 - Descrição narrativa: Como estudante, quero denunciar ou bloquear alguém em
   caso de problema, para me sentir protegido ao utilizar a plataforma.
