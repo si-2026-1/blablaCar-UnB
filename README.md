@@ -1,93 +1,59 @@
-# BlablaCar UnB
+# UnBlaBlaCar
 
-Plataforma de caronas solidárias entre estudantes da Universidade de Brasília
-(UnB), com foco em organização, segurança básica e uso simples no dia a dia.
+Projeto acadêmico de Sistemas de Informação para planejar e prototipar uma
+plataforma de caronas solidárias entre estudantes da UnB.
+
+O produto é apresentado visualmente como UnBlaBlaCar; o repositório mantém o
+nome blablaCar-UnB.
 
 ## Problema
 
-Muitos estudantes enfrentam um transporte público cansativo, enquanto vários
-carros circulam com assentos vazios. Ao mesmo tempo, há pouca interação social
-no deslocamento universitário.
-
-## Proposta de solução
-
-O BlablaCar UnB propõe uma plataforma web para organizar caronas solidárias
-entre estudantes da UnB. A proposta é facilitar a conexão entre quem oferece e
-quem procura carona, com autenticação institucional, comunicação simples e foco
-em confiança entre participantes.
+Há muitos assentos vazios em trajetos recorrentes para a universidade enquanto
+alunos enfrentam deslocamentos longos e caros.
 
 ## Escopo do MVP
 
-O MVP é uma aplicação web responsiva, com prioridade para uso no celular,
-voltada apenas para estudantes autenticados por e-mail institucional.
+Aplicação web mobile-first com:
 
-Funcionalidades centrais:
+- login institucional;
+- busca/publicação de caronas;
+- solicitação de vaga e resposta;
+- rateio sugerido de custos;
+- comunicação entre participantes;
+- reputação básica.
 
-- Oferecer carona.
-- Buscar carona.
-- Pedir vaga.
-- Conversar em chat temporário.
-- Visualizar rateio sugerido.
-- Avaliar após a viagem.
+Importante: não é Uber/99 nem transporte comercial. Não há pagamento dentro do
+app e o objetivo é compartilhar custos, sem lucro.
 
-Importante: o BlablaCar UnB não é Uber, 99 nem serviço comercial de transporte.
-O objetivo é o compartilhamento de custos, sem lucro para motoristas ou para a
-plataforma.
+## Protótipo
 
-## Tecnologias e documentação
+Protótipo em HTML/CSS/JS na pasta `prototype/`.
 
-- Documentação em Markdown.
-- [MkDocs](https://www.mkdocs.org/) com tema Material.
-- Publicação automatizada no GitHub Pages.
+### Como executar o protótipo
 
-## Documentação publicada
-
-- https://si-2026-1.github.io/blablaCar-UnB/
-
-## Estrutura resumida do repositório
-
-```text
-.
-├── .github/
-│   └── workflows/
-│       └── deploy.yml
-├── docs/
-│   ├── index.md
-│   ├── projeto/
-│   ├── backlog/
-│   └── design/
-├── site/
-│   └── assets/
-├── mkdocs.yml
-├── README.md
-└── CONTRIBUTING.md
+```bash
+cd prototype
+python -m http.server 5500
 ```
 
-Observação: a pasta `site/` é gerada localmente pelo `mkdocs build` e contém os
-arquivos estáticos publicados, incluindo `assets/`.
+Abra em `http://localhost:5500`.
 
-## Como executar a documentação localmente
+## Documentação MkDocs
 
-1. Instale as dependências:
+### Como executar localmente
 
 ```bash
 pip install mkdocs mkdocs-material
-```
-
-2. Rode localmente:
-
-```bash
 mkdocs serve
 ```
 
-3. Acesse no navegador:
+Abra em `http://127.0.0.1:8000`.
 
-```text
-http://127.0.0.1:8000
-```
+### Documentação publicada
+
+https://si-2026-1.github.io/blablaCar-UnB/
 
 ## Status atual
 
-Projeto em fase de documentação e planejamento inicial do MVP. O foco é
-acadêmico e simula o planejamento do desenvolvimento do produto, sem implementar
-pagamento na plataforma.
+Fase de finalização da documentação e protótipo funcional de fluxos principais
+do MVP.

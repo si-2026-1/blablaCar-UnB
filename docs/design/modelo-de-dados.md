@@ -1,6 +1,6 @@
 # Modelo de dados
 
-Modelagem inicial e consistente com o MVP acadêmico do BlablaCar UnB. O objetivo
+Modelagem inicial e consistente com o MVP acadêmico do UnBlaBlaCar. O objetivo
 é descrever as entidades e regras de negócio, sem implementar banco de dados ou
 código.
 
@@ -99,7 +99,7 @@ Relacionamentos:
 - Carona 1:N Avaliacao
 - Carona 1:N Denuncia (opcional)
 
-### SolicitacaoCarona
+### Solicitacao (SolicitacaoCarona)
 
 Finalidade: representar o pedido de vaga de um passageiro em uma carona.
 
@@ -227,8 +227,9 @@ ao Usuario que atua como motorista.
 7. Denuncia e bloqueio após interação: denúncia e bloqueio devem ocorrer apenas
 	entre usuários que já interagiram em uma mesma carona.
 
-8. Privacidade: telefone é opcional; endereço residencial completo não deve ser
-   armazenado/exposto; placa pode ser exibida parcialmente quando necessário.
+8. Privacidade: telefone pessoal não é obrigatório; endereço residencial completo não deve ser
+	armazenado/exposto; placa pode ser exibida parcialmente quando necessário; histórico e
+	localização devem ser protegidos e exibidos apenas no contexto necessário da carona.
 
 ## Modelo lógico resumido
 

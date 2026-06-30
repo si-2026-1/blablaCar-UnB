@@ -1,6 +1,6 @@
 # Glossário
 
-Este glossário reúne termos centrais do MVP do UnBla Bla Car para manter a
+Este glossário reúne termos centrais do MVP do UnBlaBlaCar para manter a
 linguagem da documentação clara e consistente.
 
 ## Usuário

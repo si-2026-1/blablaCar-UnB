@@ -8,7 +8,7 @@ custos, tempo de viagem e reduz oportunidades de interação entre colegas.
 
 ## Proposta de solução
 
-O BlablaCar UnB propõe uma plataforma de caronas solidárias entre estudantes. A
+O UnBlaBlaCar propõe uma plataforma de caronas solidárias entre estudantes. A
 ideia é conectar quem oferece e quem busca carona com segurança básica,
 comunicação simples e organização da viagem.
 

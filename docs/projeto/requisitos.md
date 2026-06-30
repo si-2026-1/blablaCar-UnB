@@ -1,6 +1,6 @@
 # Requisitos
 
-Este documento define os requisitos do MVP do BlablaCar UnB de forma objetiva,
+Este documento define os requisitos do MVP do UnBlaBlaCar de forma objetiva,
 rastreável e coerente com o escopo acadêmico do projeto.
 
 ## Requisitos funcionais

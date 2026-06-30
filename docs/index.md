@@ -1,48 +1,42 @@
-# UnBla Bla Car
+# UnBlaBlaCar
 
-## Visão geral
+Plataforma web mobile-first de caronas solidárias entre estudantes da
+Universidade de Brasília.
 
-O BlablaCar UnB é um projeto acadêmico voltado ao planejamento de uma plataforma
-de caronas solidárias entre estudantes da Universidade de Brasília. A proposta é
-conectar quem tem vagas disponíveis no carro com quem precisa se deslocar com
-mais praticidade, conforto e economia.
+## Problema
 
-## Objetivo
+Muitos estudantes enfrentam deslocamentos longos, enquanto carros com assentos
+vazios já fazem trajetos parecidos até a UnB.
 
-Definir e documentar um MVP de aplicação web responsiva, mobile-first, que ajude
-estudantes a organizar caronas de forma simples, segura e colaborativa.
+## Proposta
+
+Conectar estudantes para compartilhar custos de viagem com mais organização,
+transparência e segurança básica, sem transação financeira dentro do aplicativo.
 
 ## Público-alvo
 
-Estudantes da UnB com autenticação por e-mail institucional.
+Estudantes da UnB com acesso por e-mail institucional.
 
-## Funcionalidades principais do MVP
+## Funcionalidades do MVP
 
-- Oferecer carona.
-- Buscar carona.
-- Pedir vaga.
-- Conversar em chat temporário.
-- Visualizar rateio sugerido.
-- Avaliar após a viagem.
+- autenticação institucional;
+- busca e publicação de caronas;
+- solicitação de vaga e resposta do motorista;
+- rateio sugerido de custos;
+- comunicação entre participantes;
+- perfil e reputação.
 
-## Aviso de escopo
+## Aviso importante
 
-Este projeto é acadêmico e representa o planejamento de desenvolvimento de um
-MVP. O BlablaCar UnB não é Uber, 99 nem qualquer serviço comercial de
-transporte. A plataforma não processa pagamentos e não tem finalidade lucrativa.
+O UnBlaBlaCar não é Uber, 99 nem serviço de transporte comercial. O foco é
+carona solidária e compartilhamento de custos, sem lucro e sem pagamento no app.
 
-## Principais seções da documentação
+## Protótipo
 
-Esta documentação está organizada nas seguintes seções:
+As telas e fluxos atuais estão documentados em [Protótipo](design/prototipo.md).
 
-- Projeto: visão e escopo, requisitos e decisões do MVP.
+## Organização da documentação
+
+- Projeto: visão, requisitos, riscos e glossário.
 - Backlog: épicos, histórias, rastreabilidade e roadmap.
-- Design inicial: jornada do usuário e modelo de dados.
-
-## Integrantes
-
-- Luiz Felipe Bessa
-- Lucas Tavares Drumond
-- Heitor Estevam Fernandes
-- Antonio Paulo
-- Gabriel Costa
+- Design Inicial: jornada, modelo de dados e protótipo.
